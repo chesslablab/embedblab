@@ -18,7 +18,7 @@ return function (App $app) {
 
     $app->get('/', function (Request $request, Response $response) {
         $renderer = new PhpRenderer('../templates');
-        return $renderer->render($response, "index.php");
+        return $renderer->render($response, "index.html.php");
     });
 
     $app->group('/users', function (Group $group) {
@@ -28,6 +28,6 @@ return function (App $app) {
 
     $app->get('/about', function (Request $request, Response $response) {
         $renderer = new PhpRenderer('../templates');
-        return $renderer->render($response, "about.php");
+        return $renderer->render($response, "about.html.php");
     });
 };

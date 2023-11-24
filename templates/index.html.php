@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <?php require __DIR__ . '/partial/nav.php'; ?>
+    <?php require __DIR__ . '/partial/nav.html.php'; ?>
 
     <div class="container my-5">
       <h1>VisualChess</h1>
@@ -25,7 +25,7 @@
     </div>
 
     <div class="container">
-      <?php require __DIR__ . '/partial/footer.php'; ?>
+      <?php require __DIR__ . '/partial/footer.html.php'; ?>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
