@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 use App\Application\Actions\User\ListUsersAction;
 use App\Application\Actions\User\ViewUserAction;
-use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
+use Slim\Http\Response as Response;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 use Slim\Views\PhpRenderer;
 
@@ -29,5 +29,13 @@ return function (App $app) {
     $app->get('/about', function (Request $request, Response $response) {
         $renderer = new PhpRenderer('../templates');
         return $renderer->render($response, "about.html.php");
+    });
+
+    $app->post('/api/heuristics', function (Request $request, Response $response) {
+        $params = $request->getParsedBody();
+
+        // TODO
+
+        return $response->withJson($params, 200);
     });
 };
