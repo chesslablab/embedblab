@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use Chess\Heuristics\EvalFunction;
 use Chess\Heuristics\SanHeuristics;
-use Chess\Variant\Classical\Board as ClassicalBoard;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 use Slim\Http\Response as Response;
@@ -31,10 +30,8 @@ return function (App $app) {
 
         // TODO: Parameter validation
 
-        $board = new ClassicalBoard();
-
         $evalFunction = new EvalFunction();
-        $heuristics = new SanHeuristics($params['movetext'], $board);
+        $heuristics = new SanHeuristics($params['movetext']);
 
         $json = [
             'evalNames' => $evalFunction->names(),
