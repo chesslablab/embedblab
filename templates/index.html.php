@@ -24,32 +24,7 @@
           </div>
           <button type="submit" class="btn btn-primary mt-2">Submit</button>
         </form>
-
-        <div class="container">
-          <div class="row">
-            <div class="col-sm">
-              <canvas id="materialChart"></canvas>
-            </div>
-            <div class="col-sm">
-              <canvas id="centerChart"></canvas>
-            </div>
-            <div class="col-sm">
-              <canvas id="connectivityChart"></canvas>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm">
-              <canvas id="spaceChart"></canvas>
-            </div>
-            <div class="col-sm">
-              <canvas id="pressureChart"></canvas>
-            </div>
-            <div class="col-sm">
-              <canvas id="kingSafetyChart"></canvas>
-            </div>
-          </div>
-        </div>
-
+        <div id="charts" class="container"></div>
       </div>
     </div>
 
