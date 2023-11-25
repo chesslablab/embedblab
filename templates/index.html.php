@@ -12,7 +12,7 @@
 
     <div class="container my-5">
       <h1>Chess Game</h1>
-      <div class="col-lg-8 px-0">
+      <div class="col-lg-12 px-0">
         <p class="fs-5">
           A chess game can be plotted in terms of balance. +1 is the best
           possible evaluation for White and -1 the best possible evaluation for
@@ -20,10 +20,36 @@
         </p>
         <form id="gameForm">
           <div class="form-group">
-            <textarea class="form-control" rows="3"></textarea>
+            <textarea class="form-control" rows="4"></textarea>
           </div>
           <button type="submit" class="btn btn-primary mt-2">Submit</button>
         </form>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <canvas id="materialChart"></canvas>
+            </div>
+            <div class="col-sm">
+              <canvas id="centerChart"></canvas>
+            </div>
+            <div class="col-sm">
+              <canvas id="connectivityChart"></canvas>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <canvas id="spaceChart"></canvas>
+            </div>
+            <div class="col-sm">
+              <canvas id="pressureChart"></canvas>
+            </div>
+            <div class="col-sm">
+              <canvas id="kingSafetyChart"></canvas>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -32,6 +58,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
