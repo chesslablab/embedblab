@@ -26,10 +26,16 @@ gameForm.querySelector('button').onclick = async (event) => {
           datasets: [{
             label: item,
             data: data,
-            borderWidth: 1
+            borderWidth: 2,
+            tension: 0.3
           }]
         },
         options: {
+          elements: {
+            point:{
+              radius: 0
+            }
+          },
           scales: {
             y: {
               beginAtZero: true,
