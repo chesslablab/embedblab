@@ -11,16 +11,16 @@
     <?php require __DIR__ . '/partial/nav.html.php'; ?>
 
     <div class="container my-5">
-      <h1>Chess Game</h1>
+      <h1>Data visualization analysis</h1>
       <div class="col-lg-12 px-0">
-        <p class="fs-5">
+        <p>
           A chess game can be plotted in terms of balance. +1 is the best
           possible evaluation for White and -1 the best possible evaluation for
           Black. Both forces being set to 0 means they're balanced.
         </p>
         <form id="gameForm">
           <div class="form-group">
-            <textarea class="form-control" rows="4"></textarea>
+            <textarea class="form-control" rows="4" placeholder="e.g. 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6"></textarea>
           </div>
           <button type="submit" class="btn btn-primary mt-2">Submit</button>
         </form>
