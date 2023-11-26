@@ -12,7 +12,9 @@ div#charts > div {
   width: 33%;
 }
 
-button:not([type="submit"]) {
+button#loadingBtn,
+button#downloadBtn
+ {
   display: none;
 }
 

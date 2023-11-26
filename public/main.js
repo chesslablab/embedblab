@@ -7,8 +7,8 @@ gameForm.querySelector('button').onclick = (event) => {
   while (charts.firstChild) {
     charts.removeChild(charts.firstChild);
   }
-  gameForm.querySelector('button:not([type="submit"])').style.display = 'block';
-  gameForm.querySelector('button[type="submit"]').style.display = 'none';
+  document.getElementById('submitBtn').style.display = 'none';
+  document.getElementById('loadingBtn').style.display = 'block';
   fetch(`http://localhost:8080/api/heuristics`, {
     method: 'POST',
     headers: {
@@ -94,16 +94,17 @@ gameForm.querySelector('button').onclick = (event) => {
     alert('Whoops! Something went wrong, please try again.');
   })
   .finally(() => {
-    gameForm.querySelectorAll('button').forEach(item => item.style.display = 'none');
-    gameForm.querySelector('button[type="submit"]').style.display = 'block';
+    document.getElementById('loadingBtn').style.display = 'none';
+    document.getElementById('downloadBtn').style.display = 'block';
   });
 }
 
-document.querySelector('button#screenshot').addEventListener("click", () => {
-  html2canvas(document.querySelector('#charts')).then(canvas => {
-    const a = document.createElement("a");
-    a.href = canvas.toDataURL("image/jpeg");
-    a.download = "image.jpeg";
+document.getElementById('downloadBtn').onclick = (event) => {
+  event.preventDefault();
+  html2canvas(document.getElementById('charts')).then(canvas => {
+    const a = document.createElement('a');
+    a.href = canvas.toDataURL('image/jpeg');
+    a.download = 'chessvisual.jpeg';
     a.click();
   });
-});
+}
