@@ -98,3 +98,12 @@ gameForm.querySelector('button').onclick = (event) => {
     gameForm.querySelector('button[type="submit"]').style.display = 'block';
   });
 }
+
+document.querySelector('button#screenshot').addEventListener("click", () => {
+  html2canvas(document.querySelector('#charts')).then(canvas => {
+    const a = document.createElement("a");
+    a.href = canvas.toDataURL("image/jpeg");
+    a.download = "image.jpeg";
+    a.click();
+  });
+});
