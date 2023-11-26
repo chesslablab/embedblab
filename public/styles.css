@@ -12,6 +12,10 @@ div#charts > div {
   width: 33%;
 }
 
+button:not([type="submit"]) {
+  display: none;
+}
+
 @media (max-width: 1200px) {
   div#charts > div {
     width: 50%;

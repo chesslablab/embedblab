@@ -1,12 +1,15 @@
 const gameForm = document.getElementById('gameForm');
-
 const charts = document.getElementById('charts');
-
 const allEqual = arr => arr.every(val => val === arr[0]);
 
-gameForm.querySelector('button').onclick = async (event) => {
+gameForm.querySelector('button').onclick = (event) => {
   event.preventDefault();
-  await fetch(`http://localhost:8080/api/heuristics`, {
+  while (charts.firstChild) {
+    charts.removeChild(charts.firstChild);
+  }
+  gameForm.querySelector('button:not([type="submit"])').style.display = 'block';
+  gameForm.querySelector('button[type="submit"]').style.display = 'none';
+  fetch(`http://localhost:8080/api/heuristics`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -83,5 +86,9 @@ gameForm.querySelector('button').onclick = async (event) => {
   })
   .catch(error => {
     alert('Whoops! Something went wrong, please try again.');
+  })
+  .finally(() => {
+    gameForm.querySelectorAll('button').forEach(item => item.style.display = 'none');
+    gameForm.querySelector('button[type="submit"]').style.display = 'block';
   });
 }
