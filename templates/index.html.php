@@ -20,7 +20,7 @@
         </p>
         <form id="gameForm">
           <div class="form-group">
-            <textarea class="form-control" rows="4" placeholder="e.g. 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6"></textarea>
+            <textarea class="form-control" rows="5" placeholder="e.g. 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6" spellcheck="false"></textarea>
           </div>
           <button type="submit" class="btn btn-primary mt-3">Submit</button>
           <button class="btn btn-primary mt-3" type="button" disabled>
