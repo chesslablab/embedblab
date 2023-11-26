@@ -55,6 +55,9 @@ gameForm.querySelector('button').onclick = (event) => {
                 grid: {
                   display: false
                 },
+                border: {
+                  display: false
+                },
                 beginAtZero: true,
                 min: -1.1,
                 max: 1.1
@@ -64,6 +67,9 @@ gameForm.querySelector('button').onclick = (event) => {
                   display: false
                 },
                 grid: {
+                  display: false
+                },
+                border: {
                   display: false
                 }
               }
