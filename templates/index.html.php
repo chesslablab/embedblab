@@ -22,13 +22,13 @@
           <div class="form-group">
             <textarea class="form-control" rows="4" placeholder="e.g. 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary mt-2">Submit</button>
-          <button class="btn btn-primary mt-2" type="button" disabled>
+          <button type="submit" class="btn btn-primary mt-3">Submit</button>
+          <button class="btn btn-primary mt-3" type="button" disabled>
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
             Loading...
           </button>
         </form>
-        <div id="charts" class="container"></div>
+        <div id="charts" class="container mt-3"></div>
       </div>
     </div>
 
