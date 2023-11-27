@@ -27,9 +27,9 @@
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
             Loading...
           </button>
-          <button id="downloadBtn" class="btn btn-secondary w-100 mt-1">Download</button>
         </form>
-        <div id="charts" class="container mt-4"></div>
+        <div id="charts" class="container mt-2"></div>
+        <button id="downloadBtn" class="btn btn-secondary w-100 mt-2">Download</button>
       </div>
     </div>
 
