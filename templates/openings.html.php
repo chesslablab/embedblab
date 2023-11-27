@@ -18,9 +18,14 @@
           possible evaluation for White and -1 the best possible evaluation for
           Black. Both forces being set to 0 means they're balanced.
         </p>
-        <p class="fs-5">
-          To do.
-        </p>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Select an option</option>
+          <option value="A">A: Flank Openings</option>
+          <option value="B">B: Semi-Open Games other than the French Defense</option>
+          <option value="C">C: Open Games and the French Defense</option>
+          <option value="D">D: Closed Games and Semi-Closed Games</option>
+          <option value="E">E: Indian Defenses</option>
+        </select>
       </div>
     </div>
 
