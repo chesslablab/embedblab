@@ -18,14 +18,18 @@
           possible evaluation for White and -1 the best possible evaluation for
           Black. Both forces being set to 0 means they're balanced.
         </p>
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Select an option</option>
-          <option value="A">A: Flank Openings</option>
-          <option value="B">B: Semi-Open Games other than the French Defense</option>
-          <option value="C">C: Open Games and the French Defense</option>
-          <option value="D">D: Closed Games and Semi-Closed Games</option>
-          <option value="E">E: Indian Defenses</option>
-        </select>
+        <form id="openingForm">
+          <div class="form-group">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Select an option</option>
+              <option value="A">A: Flank Openings</option>
+              <option value="B">B: Semi-Open Games other than the French Defense</option>
+              <option value="C">C: Open Games and the French Defense</option>
+              <option value="D">D: Closed Games and Semi-Closed Games</option>
+              <option value="E">E: Indian Defenses</option>
+            </select>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -34,6 +38,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script src="openings.js"></script>
+    <script src="openings.js" type="module"></script>
   </body>
 </html>
