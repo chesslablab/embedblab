@@ -39,4 +39,4 @@ Run this command in the application directory to run the test suite
 composer test
 ```
 
-That's it! Now go build something cool.
+That's it! Now go build something cool. Happy coding and learning!
