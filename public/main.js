@@ -95,6 +95,7 @@ gameForm.querySelector('button').onclick = (event) => {
   })
   .finally(() => {
     document.getElementById('loadingBtn').style.display = 'none';
+    document.getElementById('submitBtn').style.display = 'block';
     document.getElementById('downloadBtn').style.display = 'block';
   });
 }
