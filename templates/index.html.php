@@ -11,7 +11,7 @@
     <?php require __DIR__ . '/partial/nav.html.php'; ?>
 
     <div class="container my-5">
-      <h1>Data visualization analysis</h1>
+      <h1>Chess Data Visualization</h1>
       <div class="col-lg-12 px-0">
         <p>
           A chess game can be plotted in terms of balance. +1 is the best
