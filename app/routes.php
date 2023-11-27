@@ -20,6 +20,11 @@ return function (App $app) {
         return $renderer->render($response, "index.html.php");
     });
 
+    $app->get('/openings', function (Request $request, Response $response) {
+        $renderer = new PhpRenderer('../templates');
+        return $renderer->render($response, "openings.html.php");
+    });
+
     $app->get('/about', function (Request $request, Response $response) {
         $renderer = new PhpRenderer('../templates');
         return $renderer->render($response, "about.html.php");
