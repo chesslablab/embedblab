@@ -17,7 +17,12 @@ return function (App $app) {
 
     $app->get('/', function (Request $request, Response $response) {
         $renderer = new PhpRenderer('../templates');
-        return $renderer->render($response, "index.html.php");
+        return $renderer->render($response, "games.html.php");
+    });
+
+    $app->get('/games', function (Request $request, Response $response) {
+        $renderer = new PhpRenderer('../templates');
+        return $renderer->render($response, "games.html.php");
     });
 
     $app->get('/openings', function (Request $request, Response $response) {
