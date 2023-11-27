@@ -12,7 +12,7 @@
 
     <div class="container my-5">
       <h1>Openings</h1>
-      <div class="col-lg-8 px-0">
+      <div class="col-lg-12 px-0">
         <p>
           A chess game can be plotted in terms of balance. +1 is the best
           possible evaluation for White and -1 the best possible evaluation for
@@ -30,7 +30,7 @@
             </select>
           </div>
         </form>
-        <table class="table table-hover">
+        <table class="table table-hover mt-2">
           <tbody></tbody>
         </table>
       </div>
