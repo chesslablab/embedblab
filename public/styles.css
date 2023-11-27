@@ -2,6 +2,10 @@ canvas {
   margin: 0 auto;
 }
 
+table tbody tr {
+  cursor: pointer;
+}
+
 div#charts {
   display: flex;
   flex-wrap: wrap;
