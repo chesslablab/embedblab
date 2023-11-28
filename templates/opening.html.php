@@ -12,9 +12,10 @@
 
     <div class="container my-5">
       <h1>Opening</h1>
-      <h2><?php print_r($eco); ?></h2>
+      <h2><?php echo $name; ?></h2>
+      <h3><?php echo strtoupper($eco); ?></h3>
       <div class="col-lg-12 px-0">
-        To do.
+        <?php echo $movetext; ?>
       </div>
     </div>
 

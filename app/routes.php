@@ -35,10 +35,15 @@ return function (App $app) {
     $app->get('/opening/{eco}/{name}', function (Request $request, Response $response, $args) {
         $contents = file_get_contents(DATA_FOLDER.'/openings.json');
         $json = json_decode($contents, true);
-
-        // TODO: Pass the incoming opening to the view
-
+        foreach ($json as $opening) {
+            $slug = URLify::slug($opening['name']);
+            if ($slug === $args['name']) {
+                $args['name'] = $opening['name'];
+                $args['movetext'] = $opening['movetext'];
+            }
+        }
         $renderer = new PhpRenderer('../templates');
+        
         return $renderer->render($response, "opening.html.php", $args);
     });
 
