@@ -22,11 +22,11 @@
           <div class="form-group">
             <select class="form-select" aria-label="Default select example">
               <option selected>Select an option</option>
-              <option value="A">A: Flank Openings</option>
-              <option value="B">B: Semi-Open Games other than the French Defense</option>
-              <option value="C">C: Open Games and the French Defense</option>
-              <option value="D">D: Closed Games and Semi-Closed Games</option>
-              <option value="E">E: Indian Defenses</option>
+              <option value="a">A: Flank Openings</option>
+              <option value="b">B: Semi-Open Games other than the French Defense</option>
+              <option value="c">C: Open Games and the French Defense</option>
+              <option value="d">D: Closed Games and Semi-Closed Games</option>
+              <option value="e">E: Indian Defenses</option>
             </select>
           </div>
         </form>

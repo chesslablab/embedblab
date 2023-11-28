@@ -52,6 +52,7 @@ return function (App $app) {
         $json = json_decode($contents, true);
         foreach ($json as $opening) {
             if (str_starts_with(strtolower($opening['eco']), $args['letter'])) {
+                $opening['slug'] = URLify::slug($opening['name']);
                 $openings[] = $opening;
             }
         }
