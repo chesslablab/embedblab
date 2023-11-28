@@ -3,6 +3,12 @@ import { openings } from './data.js';
 const openingForm = document.getElementById('openingForm');
 const tbody = document.querySelector('tbody');
 
+const kebabCase = string => string
+    .replace(/[:\,\']/g, '')
+    .replace(/([a-z])([A-Z])/g, "$1-$2")
+    .replace(/[\s_]+/g, '-')
+    .toLowerCase();
+
 openingForm.querySelector('select').onchange = async (event) => {
   event.preventDefault();
 
@@ -14,6 +20,10 @@ openingForm.querySelector('select').onchange = async (event) => {
   openings.forEach(item => {
     if (item.eco.startsWith(event.target.value)) {
       const tr = document.createElement('tr');
+
+      tr.addEventListener('click', function(event) {
+        window.location.href = `opening/${item.eco.toLowerCase()}/${kebabCase(item.name)}`;
+      });
 
       const th = document.createElement('th');
       th.setAttribute("scope", "row");
