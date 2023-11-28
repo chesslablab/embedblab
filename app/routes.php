@@ -47,11 +47,19 @@ return function (App $app) {
         return $renderer->render($response, "about.html.php");
     });
 
-    $app->get('/api/openings', function (Request $request, Response $response) {
+    $app->get('/api/openings/{letter}', function (Request $request, Response $response, $args) {
         $contents = file_get_contents(DATA_FOLDER.'/openings.json');
         $json = json_decode($contents, true);
+        foreach ($json as $opening) {
+            if (str_starts_with(strtolower($opening['eco']), $args['letter'])) {
+                $openings[] = $opening;
+            }
+        }
+        if (!isset($openings)) {
+            return $response->withStatus(204);
+        }
 
-        return $response->withJson($json, 200);
+        return $response->withJson($openings, 200);
     });
 
     $app->post('/api/heuristics', function (Request $request, Response $response) {
