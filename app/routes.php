@@ -9,6 +9,8 @@ use Slim\App;
 use Slim\Http\Response as Response;
 use Slim\Views\PhpRenderer;
 
+const DATA_FOLDER = __DIR__.'/../resources/data';
+
 return function (App $app) {
     $app->options('/{routes:.*}', function (Request $request, Response $response) {
         // CORS Pre-Flight OPTIONS Request Handler
@@ -31,6 +33,11 @@ return function (App $app) {
     });
 
     $app->get('/opening/{eco}/{name}', function (Request $request, Response $response, $args) {
+        $contents = file_get_contents(DATA_FOLDER.'/openings.json');
+        $json = json_decode($contents, true);
+
+        // TODO: Pass the incoming opening to the view
+
         $renderer = new PhpRenderer('../templates');
         return $renderer->render($response, "opening.html.php", $args);
     });
@@ -38,6 +45,13 @@ return function (App $app) {
     $app->get('/about', function (Request $request, Response $response) {
         $renderer = new PhpRenderer('../templates');
         return $renderer->render($response, "about.html.php");
+    });
+
+    $app->get('/api/openings', function (Request $request, Response $response) {
+        $contents = file_get_contents(DATA_FOLDER.'/openings.json');
+        $json = json_decode($contents, true);
+
+        return $response->withJson($json, 200);
     });
 
     $app->post('/api/heuristics', function (Request $request, Response $response) {
