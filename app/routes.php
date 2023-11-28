@@ -30,6 +30,11 @@ return function (App $app) {
         return $renderer->render($response, "openings.html.php");
     });
 
+    $app->get('/opening/{eco}/{name}', function (Request $request, Response $response, $args) {
+        $renderer = new PhpRenderer('../templates');
+        return $renderer->render($response, "opening.html.php", $args);
+    });
+
     $app->get('/about', function (Request $request, Response $response) {
         $renderer = new PhpRenderer('../templates');
         return $renderer->render($response, "about.html.php");
