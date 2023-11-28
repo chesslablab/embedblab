@@ -90,3 +90,13 @@ fetch(`http://localhost:8080/api/heuristics`, {
   document.getElementById('loadingSpinner').style.display = 'none';
   document.getElementById('downloadBtn').style.display = 'block';
 });
+
+document.getElementById('downloadBtn').onclick = (event) => {
+  event.preventDefault();
+  html2canvas(document.getElementById('charts')).then(canvas => {
+    const a = document.createElement('a');
+    a.href = canvas.toDataURL('image/jpeg');
+    a.download = 'chessvisual.jpeg';
+    a.click();
+  });
+}
