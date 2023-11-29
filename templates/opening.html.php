@@ -14,10 +14,10 @@
     <div class="container my-5">
       <h1>Openings</h1>
       <div class="col-lg-12 px-0">
-        <p class="fs-5">
+        <p class="fs-5 fw-bold">
           <?php echo strtoupper($eco); ?> — <?php echo $name; ?>
         </p>
-        <p id="movetext" class="fw-bold"><?php echo $movetext; ?></p>
+        <p id="movetext"><?php echo $movetext; ?></p>
         <div class="d-flex justify-content-center">
           <div id="loadingSpinner" class="spinner-border" role="status">
             <span class="sr-only"></span>

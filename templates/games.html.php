@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>ChesslaBlab — Games</title>
+    <meta name="description" content="A data visualization analysis tool for chess games.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -13,7 +14,7 @@
     <div class="container my-5">
       <h1>Games</h1>
       <div class="col-lg-12 px-0">
-        <p class="fs-5">
+        <p class="fs-5 fw-bold">
           Did you know that a chess game can be plotted in terms of balance?
         </p>
         <p>
