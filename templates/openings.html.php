@@ -13,10 +13,12 @@
     <div class="container my-5">
       <h1>Openings</h1>
       <div class="col-lg-12 px-0">
+        <p class="fs-5">
+          Did you know that a chess game can be plotted in terms of balance?
+        </p>
         <p>
-          A chess game can be plotted in terms of balance. +1 is the best
-          possible evaluation for White and -1 the best possible evaluation for
-          Black. Both forces being set to 0 means they're balanced.
+          +1 is the best possible evaluation for White and -1 the best possible
+          evaluation for Black. Both forces being set to 0 means they're balanced.
         </p>
         <form id="openingForm">
           <div class="form-group">
