@@ -14,13 +14,8 @@
       <h1>Openings</h1>
       <div class="col-lg-12 px-0">
         <p class="fs-5">
-          Did you know that a chess game can be plotted in terms of balance?
+          <?php echo strtoupper($eco); ?> — <?php echo $name; ?>
         </p>
-        <p>
-          +1 is the best possible evaluation for White and -1 the best possible
-          evaluation for Black. Both forces being set to 0 means they're balanced.
-        </p>
-        <p class="fw-bold"><?php echo strtoupper($eco); ?> — <?php echo $name; ?></p>
         <p id="movetext" class="fw-bold"><?php echo $movetext; ?></p>
         <div class="d-flex justify-content-center">
           <div id="loadingSpinner" class="spinner-border" role="status">
