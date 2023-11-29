@@ -43,7 +43,7 @@ return function (App $app) {
             }
         }
         $renderer = new PhpRenderer('../templates');
-        
+
         return $renderer->render($response, "opening.html.php", $args);
     });
 
@@ -82,5 +82,25 @@ return function (App $app) {
         ];
 
         return $response->withJson($json, 200);
+    });
+
+    $app->get('/sitemap', function (Request $request, Response $response) {
+        $xml = new \SimpleXMLElement(
+            '<?xml version="1.0" encoding="utf-8"?>
+            <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+            </urlset>'
+        );
+        $contents = file_get_contents(DATA_FOLDER.'/openings.json');
+        $json = json_decode($contents, true);
+        foreach ($json as $opening) {
+            $eco = strtolower($opening['eco']);
+            $name = URLify::slug($opening['name']);
+            $url = $xml->addChild('url');
+            $url->addChild('loc', "http://localhost:8080/opening/{$eco}/$name");
+        }
+        $body = $response->getBody();
+        $body->write($xml->asXML());
+
+        return $response->withHeader('Content-Type', 'text/xml')->withBody($body);
     });
 };
