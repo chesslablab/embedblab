@@ -4,12 +4,16 @@ declare(strict_types=1);
 
 use Chess\Heuristics\EvalFunction;
 use Chess\Heuristics\SanHeuristics;
+use Dotenv\Dotenv;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 use Slim\Http\Response as Response;
 use Slim\Views\PhpRenderer;
 
 const DATA_FOLDER = __DIR__.'/../resources/data';
+
+$dotenv = Dotenv::createImmutable(__DIR__.'/../');
+$dotenv->load();
 
 return function (App $app) {
     $app->options('/{routes:.*}', function (Request $request, Response $response) {
@@ -96,7 +100,7 @@ return function (App $app) {
             $eco = strtolower($opening['eco']);
             $name = URLify::slug($opening['name']);
             $url = $xml->addChild('url');
-            $url->addChild('loc', "http://localhost:8080/opening/{$eco}/$name");
+            $url->addChild('loc', "{$_ENV['PROT']}://{$_ENV['HOST']}:{$_ENV['PORT']}/opening/{$eco}/$name");
         }
         $body = $response->getBody();
         $body->write($xml->asXML());
