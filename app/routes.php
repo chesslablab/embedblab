@@ -16,42 +16,36 @@ $dotenv = Dotenv::createImmutable(__DIR__.'/../');
 $dotenv->load();
 
 return function (App $app) {
+    $urlArgs = [
+        'prot' => $_ENV['PROT'],
+        'host' => $_ENV['HOST'],
+        'port' => $_ENV['PORT'],
+    ];
+
     $app->options('/{routes:.*}', function (Request $request, Response $response) {
         // CORS Pre-Flight OPTIONS Request Handler
         return $response;
     });
 
-    $app->get('/', function (Request $request, Response $response) {
-        $args = [
-            'prot' => $_ENV['PROT'],
-            'host' => $_ENV['HOST'],
-            'port' => $_ENV['PORT'],
-        ];
+    $app->get('/', function (Request $request, Response $response) use ($urlArgs) {
         $renderer = new PhpRenderer('../templates');
-        return $renderer->render($response, "games.html.php", $args);
+
+        return $renderer->render($response, "games.html.php", $urlArgs);
     });
 
-    $app->get('/games', function (Request $request, Response $response) {
-        $args = [
-            'prot' => $_ENV['PROT'],
-            'host' => $_ENV['HOST'],
-            'port' => $_ENV['PORT'],
-        ];
+    $app->get('/games', function (Request $request, Response $response) use ($urlArgs) {
         $renderer = new PhpRenderer('../templates');
-        return $renderer->render($response, "games.html.php", $args);
+
+        return $renderer->render($response, "games.html.php", $urlArgs);
     });
 
-    $app->get('/openings', function (Request $request, Response $response) {
-        $args = [
-            'prot' => $_ENV['PROT'],
-            'host' => $_ENV['HOST'],
-            'port' => $_ENV['PORT'],
-        ];
+    $app->get('/openings', function (Request $request, Response $response) use ($urlArgs) {
         $renderer = new PhpRenderer('../templates');
-        return $renderer->render($response, "openings.html.php", $args);
+
+        return $renderer->render($response, "openings.html.php", $urlArgs);
     });
 
-    $app->get('/opening/{eco}/{name}', function (Request $request, Response $response, $args) {
+    $app->get('/opening/{eco}/{name}', function (Request $request, Response $response, $args) use ($urlArgs) {
         $contents = file_get_contents(DATA_FOLDER.'/openings.json');
         $json = json_decode($contents, true);
         foreach ($json as $opening) {
@@ -63,11 +57,12 @@ return function (App $app) {
         }
         $renderer = new PhpRenderer('../templates');
 
-        return $renderer->render($response, "opening.html.php", $args);
+        return $renderer->render($response, "opening.html.php", [...$args, ...$urlArgs]);
     });
 
     $app->get('/about', function (Request $request, Response $response) {
         $renderer = new PhpRenderer('../templates');
+
         return $renderer->render($response, "about.html.php");
     });
 
