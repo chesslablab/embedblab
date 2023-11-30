@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link rel="icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ChesslaBlab — Games</title>
     <meta name="description" content="A data visualization analysis tool for chess games.">

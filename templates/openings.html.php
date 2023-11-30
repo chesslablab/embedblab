@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link rel="icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ChesslaBlab — Chess Openings</title>
     <meta name="description" content="A: Flank Openings. B: Semi-Open Games other than the French Defense. C: Open Games and the French Defense. D: Closed Games and Semi-Closed Games. E: Indian Defenses.">
