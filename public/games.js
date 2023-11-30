@@ -1,3 +1,8 @@
+const script = document.querySelector('script[src="games.js"]');
+const prot = script.getAttribute('data-prot');
+const host = script.getAttribute('data-host');
+const port = script.getAttribute('data-port');
+
 const gameForm = document.getElementById('gameForm');
 const charts = document.getElementById('charts');
 const allEqual = arr => arr.every(val => val === arr[0]);
@@ -9,7 +14,7 @@ gameForm.querySelector('button').onclick = (event) => {
   }
   document.getElementById('submitBtn').style.display = 'none';
   document.getElementById('loadingBtn').style.display = 'block';
-  fetch(`http://localhost:8080/api/heuristics`, {
+  fetch(`${prot}://${host}:${port}/api/heuristics`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

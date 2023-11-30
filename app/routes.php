@@ -22,18 +22,33 @@ return function (App $app) {
     });
 
     $app->get('/', function (Request $request, Response $response) {
+        $args = [
+            'prot' => $_ENV['PROT'],
+            'host' => $_ENV['HOST'],
+            'port' => $_ENV['PORT'],
+        ];
         $renderer = new PhpRenderer('../templates');
-        return $renderer->render($response, "games.html.php");
+        return $renderer->render($response, "games.html.php", $args);
     });
 
     $app->get('/games', function (Request $request, Response $response) {
+        $args = [
+            'prot' => $_ENV['PROT'],
+            'host' => $_ENV['HOST'],
+            'port' => $_ENV['PORT'],
+        ];
         $renderer = new PhpRenderer('../templates');
-        return $renderer->render($response, "games.html.php");
+        return $renderer->render($response, "games.html.php", $args);
     });
 
     $app->get('/openings', function (Request $request, Response $response) {
+        $args = [
+            'prot' => $_ENV['PROT'],
+            'host' => $_ENV['HOST'],
+            'port' => $_ENV['PORT'],
+        ];
         $renderer = new PhpRenderer('../templates');
-        return $renderer->render($response, "openings.html.php");
+        return $renderer->render($response, "openings.html.php", $args);
     });
 
     $app->get('/opening/{eco}/{name}', function (Request $request, Response $response, $args) {

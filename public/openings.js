@@ -1,3 +1,8 @@
+const script = document.querySelector('script[src="openings.js"]');
+const prot = script.getAttribute('data-prot');
+const host = script.getAttribute('data-host');
+const port = script.getAttribute('data-port');
+
 const openingForm = document.getElementById('openingForm');
 const tbody = document.querySelector('tbody');
 
@@ -8,7 +13,7 @@ openingForm.querySelector('select').onchange = async (event) => {
     tbody.removeChild(tbody.firstChild);
   }
 
-  fetch(`http://localhost:8080/api/openings/${event.target.value}`)
+  fetch(`${prot}://${host}:${port}/api/openings/${event.target.value}`)
     .then(res => res.json())
     .then(res => {
       res.forEach((item, i) => {
