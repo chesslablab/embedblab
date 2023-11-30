@@ -16,16 +16,27 @@ $dotenv = Dotenv::createImmutable(__DIR__.'/../');
 $dotenv->load();
 
 return function (App $app) {
+    /*
+    |---------------------------------------------------------------------------
+    | CORS Pre-Flight OPTIONS Request Handler.
+    |---------------------------------------------------------------------------
+    */
+
+    $app->options('/{routes:.*}', function (Request $request, Response $response) {
+        return $response;
+    });
+
+    /*
+    |---------------------------------------------------------------------------
+    | Server-side rendered (SSR) pages.
+    |---------------------------------------------------------------------------
+    */
+
     $urlArgs = [
         'prot' => $_ENV['PROT'],
         'host' => $_ENV['HOST'],
         'port' => $_ENV['PORT'],
     ];
-
-    $app->options('/{routes:.*}', function (Request $request, Response $response) {
-        // CORS Pre-Flight OPTIONS Request Handler
-        return $response;
-    });
 
     $app->get('/', function (Request $request, Response $response) use ($urlArgs) {
         $renderer = new PhpRenderer('../templates');
@@ -66,6 +77,12 @@ return function (App $app) {
         return $renderer->render($response, "about.html.php");
     });
 
+    /*
+    |---------------------------------------------------------------------------
+    | API endpoints.
+    |---------------------------------------------------------------------------
+    */
+
     $app->get('/api/openings/{letter}', function (Request $request, Response $response, $args) {
         $contents = file_get_contents(DATA_FOLDER.'/openings.json');
         $json = json_decode($contents, true);
@@ -97,6 +114,12 @@ return function (App $app) {
 
         return $response->withJson($json, 200);
     });
+
+    /*
+    |---------------------------------------------------------------------------
+    | Sitemap.
+    |---------------------------------------------------------------------------
+    */
 
     $app->get('/sitemap', function (Request $request, Response $response) {
         $xml = new \SimpleXMLElement(
