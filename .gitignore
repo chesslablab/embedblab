@@ -5,3 +5,8 @@
 /logs/*
 !/logs/README.md
 .phpunit.result.cache
+
+/docker/nginx/ssl/*.crt
+/docker/nginx/ssl/*.csr
+/docker/nginx/ssl/*.key
+/docker/nginx/ssl/*.pem
