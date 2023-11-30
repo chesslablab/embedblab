@@ -1,4 +1,4 @@
-const script = document.querySelector('script[src="games.js"]');
+const script = document.getElementById('theScript');
 const prot = script.getAttribute('data-prot');
 const host = script.getAttribute('data-host');
 const port = script.getAttribute('data-port');

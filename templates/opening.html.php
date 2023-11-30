@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo strtoupper($eco); ?> — <?php echo $name; ?></title>
     <meta name="description" content="<?php echo $movetext; ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
   <body>
     <?php require __DIR__ . '/partial/nav.html.php'; ?>
@@ -36,6 +36,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="../../opening.js" type="module" data-prot="<?php echo $prot; ?>" data-host="<?php echo $host; ?>" data-port="<?php echo $port; ?>"></script>
+    <script id="theScript" src="../../assets/js/opening.js" type="module" data-prot="<?php echo $prot; ?>" data-host="<?php echo $host; ?>" data-port="<?php echo $port; ?>"></script>
   </body>
 </html>
