@@ -26,8 +26,6 @@ php -S localhost:8080 -t public
 
 ### Contributions
 
-### Contributions
-
 See the [contributing guidelines](https://github.com/chesslablab/coach/blob/main/CONTRIBUTING.md).
 
 Happy learning and coding!
