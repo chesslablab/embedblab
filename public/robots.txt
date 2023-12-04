@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.chesslablab.com/sitemap
+Sitemap: https://www.chesscoach.me/sitemap
