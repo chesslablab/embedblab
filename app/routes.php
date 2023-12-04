@@ -133,7 +133,7 @@ return function (App $app) {
             $eco = strtolower($opening['eco']);
             $name = URLify::slug($opening['name']);
             $url = $xml->addChild('url');
-            $url->addChild('loc', "{$_ENV['PROT']}://{$_ENV['HOST']}:{$_ENV['PORT']}/opening/{$eco}/$name");
+            $url->addChild('loc', "{$_ENV['PROT']}://{$_ENV['HOST']}/opening/{$eco}/$name");
         }
         $body = $response->getBody();
         $body->write($xml->asXML());
