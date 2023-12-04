@@ -1,14 +1,29 @@
-# How to Contribute
+# ChesslaBlab
+## Open Source Community
 
-## Pull Requests
+The game of chess involves quite a few different aspects of software development, which makes it a perfect topic for learning full-stack web development as well as for playing around with machine learning libraries. A bunch of public chess repos ranging from React and JavaScript to PHP are available on the ChesslaBlab community on GitHub.
 
-1. Fork the Slim Skeleton repository
-2. Create a new branch for each feature or improvement
-3. Send a pull request from each feature branch to the **4.x** branch
+### Contributing guidelines
 
-It is very important to separate new features or improvements into separate feature branches, and to send a
-pull request for each branch. This allows us to review and pull in new features or improvements individually.
+- Find a ChesslaBlab repo and make sure to read its `CONTRIBUTING.md` file.
+- Look at the open issues.
+- Leave the following comment on the issue you want to be assigned to: "Hi there, happy learning and coding!"
+- Be prepared to create a friendly PR once the issue has been assigned to you.
 
-## Style Guide
+Once you're ready, [fork the repo](https://docs.github.com/es/get-started/quickstart/fork-a-repo) and create a new branch from `master` as per the following convention.
 
-All pull requests must adhere to the [PSR-12 standard](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-12-extended-coding-style-guide.md).
+```text
+$ git checkout -b issue/n-the-title-of-the-issue
+```
+
+For example, if the title of the issue is [Update to MUI 5 #236](https://github.com/chesslablab/react-chess/issues/236) then its corresponding Git branch should be checked out from the main branch like this.
+
+```text
+$ git checkout -b issue/236-update-to-MUI-5
+```
+
+That's it!
+
+For further information please visit:
+
+- [PHP Chess Docs](https://php-chess.readthedocs.io/en/latest/)
