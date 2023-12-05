@@ -66,11 +66,11 @@ return function (App $app) {
             if ($slug === $args['name']) {
                 $args['name'] = $opening['name'];
                 $args['movetext'] = $opening['movetext'];
+                $board = (new SanPlay($opening['movetext']))->validate()->getBoard();
+                $paragraph = (new FenParagraph($board->toFen()))->getParagraph();
+                $args['paragraph'] = implode(' ', $paragraph);
             }
         }
-        $board = (new SanPlay($opening['movetext']))->validate()->getBoard();
-        $paragraph = (new FenParagraph($board->toFen()))->getParagraph();
-        $args['paragraph'] = implode(' ', $paragraph);
         $renderer = new PhpRenderer('../templates');
 
         return $renderer->render($response, "opening.html.php", [...$args, ...$urlArgs]);
