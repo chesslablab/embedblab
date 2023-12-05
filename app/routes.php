@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Chess\Function\StandardFunction;
 use Chess\Heuristics\SanHeuristics;
+use Chess\Media\BoardToPng;
 use Chess\Play\SanPlay;
 use Chess\Tutor\FenParagraph;
 use Dotenv\Dotenv;
@@ -12,6 +13,7 @@ use Slim\App;
 use Slim\Http\Response as Response;
 use Slim\Views\PhpRenderer;
 
+const IMG_FOLDER = __DIR__.'/../public/assets/img';
 const DATA_FOLDER = __DIR__.'/../resources/data';
 
 $dotenv = Dotenv::createImmutable(__DIR__.'/../');
@@ -69,6 +71,11 @@ return function (App $app) {
                 $board = (new SanPlay($opening['movetext']))->validate()->getBoard();
                 $paragraph = (new FenParagraph($board->toFen()))->getParagraph();
                 $args['paragraph'] = implode(' ', $paragraph);
+                if (!file_exists(IMG_FOLDER."$slug.png")) {
+                    $args['output'] = (new BoardToPng($board, $flip = false))->output(IMG_FOLDER, $slug);
+                } else {
+                    $args['output'] = "$slug.png";
+                }
             }
         }
         $renderer = new PhpRenderer('../templates');

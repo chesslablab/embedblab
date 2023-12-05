@@ -8,6 +8,8 @@
 
 /composer.lock
 
+/public/assets/img/*
+
 .env
 
 /docker/nginx/ssl/*.crt

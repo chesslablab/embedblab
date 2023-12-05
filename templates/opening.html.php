@@ -19,7 +19,8 @@
           <?php echo strtoupper($eco); ?> — <?php echo $name; ?>
         </p>
         <p id="movetext"><?php echo $movetext; ?></p>
-        <p><?php echo $paragraph; ?></p>
+        <img src="/assets/img/<?php echo $output; ?>" alt="<?php echo $name; ?>" />
+        <p class="mt-3"><?php echo $paragraph; ?></p>
         <div class="d-flex justify-content-center">
           <div id="loadingSpinner" class="spinner-border" role="status">
             <span class="sr-only"></span>
