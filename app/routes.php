@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Chess\Heuristics\EvalFunction;
+use Chess\Function\StandardFunction;
 use Chess\Heuristics\SanHeuristics;
 use Chess\Play\SanPlay;
 use Chess\Tutor\FenParagraph;
@@ -109,11 +109,11 @@ return function (App $app) {
 
         // TODO: Parameter validation
 
-        $evalFunction = new EvalFunction();
+        $function = new StandardFunction();
         $heuristics = new SanHeuristics($params['movetext']);
 
         $json = [
-            'evalNames' => $evalFunction->names(),
+            'evalNames' => $function->names(),
             'balance' => $heuristics->getBalance(),
         ];
 
