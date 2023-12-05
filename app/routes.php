@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 use Chess\Heuristics\EvalFunction;
 use Chess\Heuristics\SanHeuristics;
+use Chess\Play\SanPlay;
+use Chess\Tutor\FenParagraph;
 use Dotenv\Dotenv;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
@@ -66,6 +68,9 @@ return function (App $app) {
                 $args['movetext'] = $opening['movetext'];
             }
         }
+        $board = (new SanPlay($opening['movetext']))->validate()->getBoard();
+        $paragraph = (new FenParagraph($board->toFen()))->getParagraph();
+        $args['paragraph'] = implode(' ', $paragraph);
         $renderer = new PhpRenderer('../templates');
 
         return $renderer->render($response, "opening.html.php", [...$args, ...$urlArgs]);

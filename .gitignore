@@ -6,6 +6,8 @@
 !/logs/README.md
 .phpunit.result.cache
 
+/composer.lock
+
 .env
 
 /docker/nginx/ssl/*.crt
