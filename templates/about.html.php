@@ -33,7 +33,7 @@
         </p>
         <div class="alert alert-primary" role="alert">
           <p class="alert-heading fw-bold">Did we miss something?</p>
-          Please let us know by either <a href="https://github.com/chesslablab/php-chess/issues" target="_blank" rel="noreferrer">raising an issue</a>
+          Please let us know by either <a href="https://github.com/chesslablab/coach/issues" target="_blank" rel="noreferrer">raising an issue</a>
           or by <a href="https://github.com/orgs/chesslablab/discussions" target="_blank" rel="noreferrer">opening a discussion</a>.
           Your feedback is very much appreciated. Thank you.
         </div>
