@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo strtoupper($eco); ?> — <?php echo $name; ?></title>
     <meta name="description" content="<?php echo $movetext; ?>">
@@ -18,9 +18,17 @@
         <p class="fs-5 fw-bold">
           <?php echo strtoupper($eco); ?> — <?php echo $name; ?>
         </p>
-        <p id="movetext"><?php echo $movetext; ?></p>
-        <img src="/assets/img/<?php echo $output; ?>" alt="<?php echo $name; ?>" />
-        <p class="mt-3"><?php echo $paragraph; ?></p>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <img src="/assets/img/<?php echo $output; ?>" class="img-fluid" alt="<?php echo $name; ?>">
+            </div>
+            <div class="col">
+              <p id="movetext" class="fw-bold"><?php echo $movetext; ?></p>
+              <p><?php echo $paragraph; ?></p>
+            </div>
+          </div>
+        </div>
         <div class="d-flex justify-content-center">
           <div id="loadingSpinner" class="spinner-border" role="status">
             <span class="sr-only"></span>
