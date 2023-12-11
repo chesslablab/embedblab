@@ -7,6 +7,8 @@ const movetext = document.getElementById('movetext');
 const charts = document.getElementById('charts');
 const allEqual = arr => arr.every(val => val === arr[0]);
 
+document.getElementById('spinner').style.display = 'block';
+
 fetch(`${prot}://${host}:${port}/api/heuristics`, {
   method: 'POST',
   headers: {
