@@ -15,16 +15,16 @@
 
     <div class="container my-5">
       <h1>Openings</h1>
-      <div class="col-lg-12 px-0">
+
         <p class="fs-5 fw-bold">
           <?php echo strtoupper($eco); ?> — <?php echo $name; ?>
         </p>
-        <div class="container">
+        <div class="container g-0">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
               <img src="/assets/img/<?php echo $output; ?>" class="img-fluid" alt="<?php echo $name; ?>">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
               <p id="movetext" class="fw-bold"><?php echo $movetext; ?></p>
               <p><?php echo $paragraph; ?></p>
             </div>
@@ -32,7 +32,7 @@
         </div>
         <div id="charts" class="container mt-2"></div>
         <button id="downloadBtn" class="btn btn-secondary w-100 mt-2">Download</button>
-      </div>
+
     </div>
 
     <div id="spinner">
