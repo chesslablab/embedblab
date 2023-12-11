@@ -18,10 +18,16 @@ composer install
 
 ### Run the App
 
-Run PHP's built-in webserver.
+Using PHP's built-in webserver.
 
 ```
 php -S localhost:8080 -t public
+```
+
+Using Docker:
+
+```
+docker compose -f docker-compose.prod.yml up -d
 ```
 
 ### File Permissions
