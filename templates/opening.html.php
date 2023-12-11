@@ -21,10 +21,10 @@
         </p>
         <div class="container">
           <div class="row">
-            <div class="col">
+            <div class="col-md-6">
               <img src="/assets/img/<?php echo $output; ?>" class="img-fluid" alt="<?php echo $name; ?>">
             </div>
-            <div class="col">
+            <div class="col-md-6">
               <p id="movetext" class="fw-bold"><?php echo $movetext; ?></p>
               <p><?php echo $paragraph; ?></p>
             </div>
