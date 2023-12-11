@@ -12,8 +12,7 @@ gameForm.querySelector('button').onclick = (event) => {
   while (charts.firstChild) {
     charts.removeChild(charts.firstChild);
   }
-  document.getElementById('submitBtn').style.display = 'none';
-  document.getElementById('loadingBtn').style.display = 'block';
+  document.getElementById('spinner').style.display = 'block';
   fetch(`${prot}://${host}:${port}/api/heuristics`, {
     method: 'POST',
     headers: {
@@ -99,8 +98,7 @@ gameForm.querySelector('button').onclick = (event) => {
     alert('Whoops! Something went wrong, please try again.');
   })
   .finally(() => {
-    document.getElementById('loadingBtn').style.display = 'none';
-    document.getElementById('submitBtn').style.display = 'block';
+    document.getElementById('spinner').style.display = 'none';
     document.getElementById('downloadBtn').style.display = 'block';
   });
 }

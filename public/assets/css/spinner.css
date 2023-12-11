@@ -1,5 +1,6 @@
 /* Absolute Center Spinner */
 #spinner {
+  display: none;
   position: fixed;
   z-index: 999;
   height: 2em;
