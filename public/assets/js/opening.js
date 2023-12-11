@@ -92,7 +92,7 @@ fetch(`${prot}://${host}:${port}/api/heuristics`, {
   alert('Whoops! Something went wrong, please try again.');
 })
 .finally(() => {
-  document.getElementById('loadingSpinner').style.display = 'none';
+  document.getElementById('spinner').style.display = 'none';
   document.getElementById('downloadBtn').style.display = 'block';
 });
 

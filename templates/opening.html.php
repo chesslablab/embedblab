@@ -8,6 +8,7 @@
     <meta name="description" content="<?php echo $movetext; ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/spinner.css">
   </head>
   <body>
     <?php require __DIR__ . '/partial/nav.html.php'; ?>
@@ -29,14 +30,12 @@
             </div>
           </div>
         </div>
-        <div class="d-flex justify-content-center">
-          <div id="loadingSpinner" class="spinner-border" role="status">
-            <span class="sr-only"></span>
-          </div>
-        </div>
         <div id="charts" class="container mt-2"></div>
         <button id="downloadBtn" class="btn btn-secondary w-100 mt-2">Download</button>
       </div>
+    </div>
+
+    <div id="spinner">
     </div>
 
     <div class="container">
