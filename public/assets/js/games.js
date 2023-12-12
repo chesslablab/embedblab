@@ -4,17 +4,24 @@ const host = script.getAttribute('data-host');
 const port = script.getAttribute('data-port');
 
 const gameForm = document.getElementById('gameForm');
+const tutor = document.getElementById('tutor');
 const charts = document.getElementById('charts');
 const allEqual = arr => arr.every(val => val === arr[0]);
 
 gameForm.querySelector('button').onclick = (event) => {
   event.preventDefault();
+
+  while (tutor.firstChild) {
+    tutor.removeChild(tutor.firstChild);
+  }
   while (charts.firstChild) {
     charts.removeChild(charts.firstChild);
   }
+
   document.getElementById('downloadBtn').style.display = 'none';
   document.getElementById('spinner').style.display = 'block';
-  fetch(`${prot}://${host}:${port}/api/heuristics`, {
+
+  const promise1 = fetch(`${prot}://${host}:${port}/api/heuristics`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -32,7 +39,6 @@ gameForm.querySelector('button').onclick = (event) => {
         const canvas = document.createElement('canvas');
         div.appendChild(canvas);
         charts.appendChild(div);
-
         new Chart(canvas, {
           type: 'line',
           data: {
@@ -94,7 +100,25 @@ gameForm.querySelector('button').onclick = (event) => {
         });
       }
     });
+  });
+
+  const promise2 = fetch(`${prot}://${host}:${port}/api/tutor`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      movetext: gameForm.querySelector('textarea').value
+    })
   })
+  .then(res => res.json())
+  .then(res => {
+    const p = document.createElement('p');
+    p.appendChild(document.createTextNode(res.paragraph));
+    tutor.appendChild(p);
+  });
+
+  Promise.all([promise1, promise2])
   .catch(error => {
     alert('Whoops! Something went wrong, please try again.');
   })

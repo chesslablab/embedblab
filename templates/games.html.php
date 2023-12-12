@@ -29,6 +29,7 @@
           </div>
           <button id="submitBtn" type="submit" class="btn btn-primary w-100 mt-2">Plot Charts</button>
         </form>
+        <div id="tutor" class="container mt-3"></div>
         <div id="charts" class="container mt-2"></div>
         <button id="downloadBtn" class="btn btn-secondary w-100 mt-2">Download</button>
       </div>
