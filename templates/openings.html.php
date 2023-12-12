@@ -14,6 +14,7 @@
 
     <div class="container my-5">
       <h1>Openings</h1>
+      <hr>
       <div class="col-lg-12 px-0">
         <p class="fs-5 fw-bold">
           Did you know that a chess game can be plotted in terms of balance?

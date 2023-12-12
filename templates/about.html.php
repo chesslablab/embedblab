@@ -13,6 +13,7 @@
 
     <div class="container my-5">
       <h1>About</h1>
+      <hr>
       <div class="col-lg-8 px-0">
         <p class="fs-5 fw-bold">
           ChesslaBlab is a GitHub organization for open-source chess projects.
