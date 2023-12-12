@@ -127,6 +127,21 @@ return function (App $app) {
         return $response->withJson($json, 200);
     });
 
+    $app->post('/api/tutor', function (Request $request, Response $response) {
+        $params = $request->getParsedBody();
+
+        // TODO: Parameter validation
+
+        $board = (new SanPlay($params['movetext']))->validate()->getBoard();
+        $paragraph = (new FenParagraph($board->toFen()))->getParagraph();
+
+        $json = [
+            'paragraph' => implode(' ', $paragraph),
+        ];
+
+        return $response->withJson($json, 200);
+    });
+
     /*
     |---------------------------------------------------------------------------
     | Sitemap.
