@@ -12,6 +12,7 @@ gameForm.querySelector('button').onclick = (event) => {
   while (charts.firstChild) {
     charts.removeChild(charts.firstChild);
   }
+  document.getElementById('downloadBtn').style.display = 'none';
   document.getElementById('spinner').style.display = 'block';
   fetch(`${prot}://${host}:${port}/api/heuristics`, {
     method: 'POST',
