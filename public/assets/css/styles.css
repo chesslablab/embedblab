@@ -17,7 +17,7 @@ div#charts {
 
 div#charts > div {
   padding: 1rem;
-  width: 33%;
+  width: 50%;
 }
 
 button#loadingBtn,

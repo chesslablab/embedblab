@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ChessCoach — Chess Openings</title>
     <meta name="description" content="A: Flank Openings. B: Semi-Open Games other than the French Defense. C: Open Games and the French Defense. D: Closed Games and Semi-Closed Games. E: Indian Defenses.">
@@ -15,7 +15,7 @@
     <div class="container my-5">
       <h1>Openings</h1>
       <hr>
-      <div class="col-lg-12 px-0">
+      <div class="col-lg-8 px-0">
         <p class="fs-5 fw-bold">
           Did you know that a chess game can be plotted in terms of balance?
         </p>

@@ -13,29 +13,30 @@
   <body>
     <div id="spinner"></div>
     <?php require __DIR__ . '/partial/nav.html.php'; ?>
+
     <div class="container my-5">
       <h1>Openings</h1>
       <hr>
-      <p class="fs-5 fw-bold">
-        <?php echo strtoupper($eco); ?> — <?php echo $name; ?>
-      </p>
-      <div class="container g-0">
-        <div class="row">
-          <div class="col-md-4">
-            <img src="/assets/img/<?php echo $output; ?>" class="img-fluid" alt="<?php echo $name; ?>">
-          </div>
-          <div class="col-md-8">
-            <p id="movetext" class="fw-bold"><?php echo $movetext; ?></p>
-            <p><?php echo $paragraph; ?></p>
-          </div>
-        </div>
+      <div class="col-lg-8 px-0">
+        <p class="fs-5 fw-bold">
+          <?php echo strtoupper($eco); ?> — <?php echo $name; ?>
+        </p>
+        <p id="movetext" class="fw-bold">
+          <?php echo $movetext; ?>
+        </p>
+        <p>
+          <?php echo $paragraph; ?>
+        </p>
+        <img src="/assets/img/<?php echo $output; ?>" class="img-fluid mx-auto d-block mt-4" alt="<?php echo $name; ?>">
+        <div id="charts" class="container mt-4"></div>
+        <button id="downloadBtn" class="btn btn-secondary w-100 mt-2">Download</button>
       </div>
-      <div id="charts" class="container mt-2"></div>
-      <button id="downloadBtn" class="btn btn-secondary w-100 mt-2">Download</button>
     </div>
+
     <div class="container">
       <?php require __DIR__ . '/partial/footer.html.php'; ?>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
