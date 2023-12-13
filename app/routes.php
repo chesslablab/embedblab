@@ -37,7 +37,7 @@ return function (App $app) {
     */
 
     $urlArgs = [
-        'prot' => $_ENV['PROT'],
+        'prot' => $_ENV['SCHEME'],
         'host' => $_ENV['HOST'],
         'port' => $_ENV['PORT'],
     ];
@@ -160,7 +160,7 @@ return function (App $app) {
             $eco = strtolower($opening['eco']);
             $name = URLify::slug($opening['name']);
             $url = $xml->addChild('url');
-            $url->addChild('loc', "{$_ENV['PROT']}://{$_ENV['HOST']}/opening/{$eco}/$name");
+            $url->addChild('loc', "{$_ENV['SCHEME']}://{$_ENV['HOST']}/opening/{$eco}/$name");
         }
         $body = $response->getBody();
         $body->write($xml->asXML());
