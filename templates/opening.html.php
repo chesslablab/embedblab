@@ -15,7 +15,7 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
 
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="<?php echo strtoupper($eco); ?> — <?php echo $name; ?>">
     <meta name="twitter:description" content="<?php echo $movetext; ?>">
     <meta name="twitter:site" content="@programarivm">
