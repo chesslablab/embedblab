@@ -15,25 +15,26 @@
     <?php require __DIR__ . '/partial/nav.html.php'; ?>
 
     <div class="container my-5">
-      <h1>Games</h1>
-      <hr>
       <div class="col-lg-8 px-0">
-        <p class="fs-5 fw-bold">
-          Did you know that a chess game can be plotted in terms of balance?
-        </p>
-        <p>
-          +1 is the best possible evaluation for White and -1 the best possible
-          evaluation for Black. Both forces being set to 0 means they're balanced.
-        </p>
-        <form id="gameForm">
-          <div class="form-group">
-            <textarea class="form-control" rows="5" placeholder="e.g. 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6" spellcheck="false"></textarea>
-          </div>
-          <button id="submitBtn" type="submit" class="btn btn-primary w-100 mt-2">Plot Charts</button>
-        </form>
-        <div id="tutor" class="container mt-3"></div>
-        <div id="charts" class="container mt-2"></div>
-        <button id="downloadBtn" class="btn btn-secondary w-100 mt-2">Download</button>
+        <article>
+          <h1>Games</h1>
+          <p class="fs-5 fw-bold">
+            Did you know that a chess game can be plotted in terms of balance?
+          </p>
+          <p>
+            +1 is the best possible evaluation for White and -1 the best possible
+            evaluation for Black. Both forces being set to 0 means they're balanced.
+          </p>
+          <form id="gameForm">
+            <div class="form-group">
+              <textarea class="form-control" rows="5" placeholder="e.g. 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6" spellcheck="false"></textarea>
+            </div>
+            <button id="submitBtn" type="submit" class="btn btn-primary w-100 mt-2">Plot Charts</button>
+          </form>
+          <div id="tutor" class="container mt-3"></div>
+          <div id="charts" class="container mt-2"></div>
+          <button id="downloadBtn" class="btn btn-secondary w-100 mt-2">Download</button>
+        </article>
       </div>
     </div>
 

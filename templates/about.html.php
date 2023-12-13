@@ -12,32 +12,33 @@
     <?php require __DIR__ . '/partial/nav.html.php'; ?>
 
     <div class="container my-5">
-      <h1>About</h1>
-      <hr>
       <div class="col-lg-8 px-0">
-        <p class="fs-5 fw-bold">
-          ChesslaBlab is a GitHub organization for open-source chess projects.
-        </p>
-        <p>
-          A bunch of public repos ranging from React and JavaScript to PHP are
-          available on it. ChesslaBlab stands for chess laboratory, so the
-          repositories can be used and extended by developers to create amazing
-          chess web apps.
-        </p>
-        <p>
-          Chess involves quite a few different aspects of software development,
-          which makes it a perfect topic for learning full-stack web development
-          as well as for playing around with machine learning libraries.
-        </p>
-        <p>
-          Happy coding and learning!
-        </p>
-        <div class="alert alert-primary" role="alert">
-          <p class="alert-heading fw-bold">Did we miss something?</p>
-          Please let us know by either <a href="https://github.com/chesslablab/coach/issues" target="_blank" rel="noreferrer">raising an issue</a>
-          or by <a href="https://github.com/orgs/chesslablab/discussions" target="_blank" rel="noreferrer">opening a discussion</a>.
-          Your feedback is very much appreciated. Thank you.
-        </div>
+        <article>
+          <h1>About</h1>
+          <p class="fs-5 fw-bold">
+            ChesslaBlab is a GitHub organization for open-source chess projects.
+          </p>
+          <p>
+            A bunch of public repos ranging from React and JavaScript to PHP are
+            available on it. ChesslaBlab stands for chess laboratory, so the
+            repositories can be used and extended by developers to create amazing
+            chess web apps.
+          </p>
+          <p>
+            Chess involves quite a few different aspects of software development,
+            which makes it a perfect topic for learning full-stack web development
+            as well as for playing around with machine learning libraries.
+          </p>
+          <p>
+            Happy coding and learning!
+          </p>
+          <div class="alert alert-primary" role="alert">
+            <p class="alert-heading fw-bold">Did we miss something?</p>
+            Please let us know by either <a href="https://github.com/chesslablab/coach/issues" target="_blank" rel="noreferrer">raising an issue</a>
+            or by <a href="https://github.com/orgs/chesslablab/discussions" target="_blank" rel="noreferrer">opening a discussion</a>.
+            Your feedback is very much appreciated. Thank you.
+          </div>
+        </article>
       </div>
     </div>
 

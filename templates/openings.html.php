@@ -13,31 +13,32 @@
     <?php require __DIR__ . '/partial/nav.html.php'; ?>
 
     <div class="container my-5">
-      <h1>Openings</h1>
-      <hr>
       <div class="col-lg-8 px-0">
-        <p class="fs-5 fw-bold">
-          Did you know that a chess game can be plotted in terms of balance?
-        </p>
-        <p>
-          +1 is the best possible evaluation for White and -1 the best possible
-          evaluation for Black. Both forces being set to 0 means they're balanced.
-        </p>
-        <form id="openingForm">
-          <div class="form-group">
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Select an option</option>
-              <option value="a">A: Flank Openings</option>
-              <option value="b">B: Semi-Open Games other than the French Defense</option>
-              <option value="c">C: Open Games and the French Defense</option>
-              <option value="d">D: Closed Games and Semi-Closed Games</option>
-              <option value="e">E: Indian Defenses</option>
-            </select>
-          </div>
-        </form>
-        <table class="table table-hover mt-2">
-          <tbody></tbody>
-        </table>
+        <article>
+          <h1>Openings</h1>
+          <p class="fs-5 fw-bold">
+            Did you know that a chess game can be plotted in terms of balance?
+          </p>
+          <p>
+            +1 is the best possible evaluation for White and -1 the best possible
+            evaluation for Black. Both forces being set to 0 means they're balanced.
+          </p>
+          <form id="openingForm">
+            <div class="form-group">
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Select an option</option>
+                <option value="a">A: Flank Openings</option>
+                <option value="b">B: Semi-Open Games other than the French Defense</option>
+                <option value="c">C: Open Games and the French Defense</option>
+                <option value="d">D: Closed Games and Semi-Closed Games</option>
+                <option value="e">E: Indian Defenses</option>
+              </select>
+            </div>
+          </form>
+          <table class="table table-hover mt-2">
+            <tbody></tbody>
+          </table>
+        </article>
       </div>
     </div>
 
