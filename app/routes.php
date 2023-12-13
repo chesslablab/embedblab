@@ -66,6 +66,7 @@ return function (App $app) {
         foreach ($json as $opening) {
             $slug = URLify::slug($opening['name']);
             if ($slug === $args['name']) {
+                $args['slug'] = $args['name'];
                 $args['name'] = $opening['name'];
                 $args['movetext'] = $opening['movetext'];
                 $board = (new SanPlay($opening['movetext']))->validate()->getBoard();

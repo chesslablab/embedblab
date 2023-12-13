@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo strtoupper($eco); ?> — <?php echo $name; ?></title>
     <meta name="description" content="<?php echo $movetext; ?>">
+
+    <meta property="og:title" content="<?php echo strtoupper($eco); ?> — <?php echo $name; ?>">
+    <meta property="og:description" content="<?php echo $movetext; ?>">
+    <meta property="og:url" content="<?php echo $scheme; ?>://<?php echo $host; ?>:<?php echo $port; ?>/opening/<?php echo $eco; ?>/<?php echo $slug; ?>">
+    <meta property="og:image" content="<?php echo $scheme; ?>://<?php echo $host; ?>:<?php echo $port; ?>/assets/img/<?php echo $output; ?>">
+    <meta property="og:site_name" content="ChessCoach" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="/assets/css/spinner.css">
