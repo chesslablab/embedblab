@@ -1,5 +1,5 @@
 const script = document.getElementById('theScript');
-const prot = script.getAttribute('data-prot');
+const scheme = script.getAttribute('data-scheme');
 const host = script.getAttribute('data-host');
 const port = script.getAttribute('data-port');
 
@@ -21,7 +21,7 @@ gameForm.querySelector('button').onclick = (event) => {
   document.getElementById('downloadBtn').style.display = 'none';
   document.getElementById('spinner').style.display = 'block';
 
-  const promise1 = fetch(`${prot}://${host}:${port}/api/heuristics`, {
+  const promise1 = fetch(`${scheme}://${host}:${port}/api/heuristics`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ gameForm.querySelector('button').onclick = (event) => {
     });
   });
 
-  const promise2 = fetch(`${prot}://${host}:${port}/api/tutor`, {
+  const promise2 = fetch(`${scheme}://${host}:${port}/api/tutor`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

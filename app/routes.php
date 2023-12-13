@@ -37,7 +37,7 @@ return function (App $app) {
     */
 
     $urlArgs = [
-        'prot' => $_ENV['SCHEME'],
+        'scheme' => $_ENV['SCHEME'],
         'host' => $_ENV['HOST'],
         'port' => $_ENV['PORT'],
     ];

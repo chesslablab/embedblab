@@ -46,6 +46,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script id="theScript" src="assets/js/openings.js" data-prot="<?php echo $prot; ?>" data-host="<?php echo $host; ?>" data-port="<?php echo $port; ?>"></script>
+    <script id="theScript" src="assets/js/openings.js" data-scheme="<?php echo $scheme; ?>" data-host="<?php echo $host; ?>" data-port="<?php echo $port; ?>"></script>
   </body>
 </html>

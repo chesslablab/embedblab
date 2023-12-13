@@ -1,5 +1,5 @@
 const script = document.getElementById('theScript');
-const prot = script.getAttribute('data-prot');
+const scheme = script.getAttribute('data-scheme');
 const host = script.getAttribute('data-host');
 const port = script.getAttribute('data-port');
 
@@ -9,7 +9,7 @@ const allEqual = arr => arr.every(val => val === arr[0]);
 
 document.getElementById('spinner').style.display = 'block';
 
-fetch(`${prot}://${host}:${port}/api/heuristics`, {
+fetch(`${scheme}://${host}:${port}/api/heuristics`, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',

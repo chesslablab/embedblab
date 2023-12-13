@@ -1,5 +1,5 @@
 const script = document.getElementById('theScript');
-const prot = script.getAttribute('data-prot');
+const scheme = script.getAttribute('data-scheme');
 const host = script.getAttribute('data-host');
 const port = script.getAttribute('data-port');
 
@@ -13,7 +13,7 @@ openingForm.querySelector('select').onchange = async (event) => {
     tbody.removeChild(tbody.firstChild);
   }
 
-  fetch(`${prot}://${host}:${port}/api/openings/${event.target.value}`)
+  fetch(`${scheme}://${host}:${port}/api/openings/${event.target.value}`)
     .then(res => res.json())
     .then(res => {
       res.forEach((item, i) => {
