@@ -12,8 +12,8 @@
   <body>
     <?php require __DIR__ . '/partial/nav.html.php'; ?>
 
-    <div class="container my-5">
-      <div class="row">
+    <div class="container my-4">
+      <div class="row p-3">
         <div class="col-lg-8 px-0">
           <article>
             <h1>Openings</h1>
