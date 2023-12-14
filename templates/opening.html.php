@@ -31,22 +31,27 @@
     <?php require __DIR__ . '/partial/nav.html.php'; ?>
 
     <div class="container my-5">
-      <div class="col-lg-8 px-0">
-        <article>
-          <h1>Openings</h1>
-          <p class="fs-5 fw-bold">
-            <?php echo strtoupper($eco); ?> — <?php echo $name; ?>
-          </p>
-          <p id="movetext" class="fw-bold">
-            <?php echo $movetext; ?>
-          </p>
-          <p>
-            <?php echo $paragraph; ?>
-          </p>
-          <img src="/assets/img/<?php echo $output; ?>" class="img-fluid mx-auto d-block mt-4" alt="<?php echo $name; ?>">
-          <div id="charts" class="container mt-4"></div>
-          <button id="downloadBtn" class="btn btn-secondary w-100 mt-2">Download</button>
-        </article>
+      <div class="row">
+        <div class="col-lg-8 px-0">
+          <article>
+            <h1>Openings</h1>
+            <p class="fs-5 fw-bold">
+              <?php echo strtoupper($eco); ?> — <?php echo $name; ?>
+            </p>
+            <p id="movetext" class="fw-bold">
+              <?php echo $movetext; ?>
+            </p>
+            <p>
+              <?php echo $paragraph; ?>
+            </p>
+            <img src="/assets/img/<?php echo $output; ?>" class="img-fluid mx-auto d-block mt-4" alt="<?php echo $name; ?>">
+            <div id="charts" class="container mt-4"></div>
+            <button id="downloadBtn" class="btn btn-secondary w-100 mt-2">Download</button>
+          </article>
+        </div>
+        <div class="col-lg-4 p-5">
+          <?php require __DIR__ . '/partial/social.html.php'; ?>
+        </div>
       </div>
     </div>
 
