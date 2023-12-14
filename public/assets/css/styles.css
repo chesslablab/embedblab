@@ -1,3 +1,12 @@
+@font-face {
+ font-family: 'Montserrat';
+ src: url('../font/Montserrat-Regular.ttf');
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 canvas {
   margin: 0 auto;
 }
@@ -33,6 +42,7 @@ div#social {
   top: 0;
   text-align: center;
   background-color: #feff9c;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 1200px) {
