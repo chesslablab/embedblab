@@ -27,7 +27,7 @@
             <form id="openingForm">
               <div class="form-group">
                 <select class="form-select" aria-label="Default select example">
-                  <option selected>Select an option</option>
+                  <option selected>Select a chess opening</option>
                   <option value="a">A: Flank Openings</option>
                   <option value="b">B: Semi-Open Games other than the French Defense</option>
                   <option value="c">C: Open Games and the French Defense</option>
