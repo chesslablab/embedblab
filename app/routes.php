@@ -45,13 +45,13 @@ return function (App $app) {
     $app->get('/', function (Request $request, Response $response) use ($urlArgs) {
         $renderer = new PhpRenderer('../templates');
 
-        return $renderer->render($response, "games.html.php", $urlArgs);
+        return $renderer->render($response, "home.html.php", $urlArgs);
     });
 
     $app->get('/games', function (Request $request, Response $response) use ($urlArgs) {
         $renderer = new PhpRenderer('../templates');
 
-        return $renderer->render($response, "games.html.php", $urlArgs);
+        return $renderer->render($response, "home.html.php", $urlArgs);
     });
 
     $app->get('/openings', function (Request $request, Response $response) use ($urlArgs) {

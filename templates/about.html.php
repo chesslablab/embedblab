@@ -17,7 +17,7 @@
           <article>
             <h1>About</h1>
             <p class="fs-5 fw-bold">
-              ChesslaBlab is a GitHub organization for open-source chess projects.
+              ChesslaBlab is a GitHub organization for open-source chess projects
             </p>
             <p>
               A bunch of public repos ranging from React and JavaScript to PHP are
