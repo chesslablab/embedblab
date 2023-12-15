@@ -48,12 +48,6 @@ return function (App $app) {
         return $renderer->render($response, "home.html.php", $urlArgs);
     });
 
-    $app->get('/games', function (Request $request, Response $response) use ($urlArgs) {
-        $renderer = new PhpRenderer('../templates');
-
-        return $renderer->render($response, "home.html.php", $urlArgs);
-    });
-
     $app->get('/openings', function (Request $request, Response $response) use ($urlArgs) {
         $renderer = new PhpRenderer('../templates');
 
