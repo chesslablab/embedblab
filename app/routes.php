@@ -78,6 +78,12 @@ return function (App $app) {
         return $renderer->render($response, "opening.html.php", [...$args, ...$urlArgs]);
     });
 
+    $app->get('/positions', function (Request $request, Response $response) use ($urlArgs) {
+        $renderer = new PhpRenderer('../templates');
+
+        return $renderer->render($response, "positions.html.php", $urlArgs);
+    });
+
     $app->get('/about', function (Request $request, Response $response) {
         $renderer = new PhpRenderer('../templates');
 
