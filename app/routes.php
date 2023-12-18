@@ -125,16 +125,22 @@ return function (App $app) {
     $app->post('/api/tutor', function (Request $request, Response $response) {
         $params = $request->getParsedBody();
 
-        // TODO: Parameter validation
+        if (!isset($params['movetext']) && !isset($params['fen'])) {
+            return $response->withStatus(400);
+        }
 
-        $board = (new SanPlay($params['movetext']))->validate()->getBoard();
-        $paragraph = (new FenParagraph($board->toFen()))->getParagraph();
-
-        $json = [
-            'paragraph' => implode(' ', $paragraph),
-        ];
-
-        return $response->withJson($json, 200);
+        if (isset($params['movetext'])) {
+            $board = (new SanPlay($params['movetext']))->validate()->getBoard();
+            $paragraph = (new FenParagraph($board->toFen()))->getParagraph();
+            return $response->withJson([
+                'paragraph' => implode(' ', $paragraph),
+            ], 200);
+        } elseif (isset($params['fen'])) {
+            $paragraph = (new FenParagraph($params['fen']))->getParagraph();
+            return $response->withJson([
+                'paragraph' => implode(' ', $paragraph),
+            ], 200);
+        }
     });
 
     /*
