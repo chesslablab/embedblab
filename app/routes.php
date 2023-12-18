@@ -129,17 +129,21 @@ return function (App $app) {
             return $response->withStatus(400);
         }
 
-        if (isset($params['movetext'])) {
-            $board = (new SanPlay($params['movetext']))->validate()->getBoard();
-            $paragraph = (new FenParagraph($board->toFen()))->getParagraph();
-            return $response->withJson([
-                'paragraph' => implode(' ', $paragraph),
-            ], 200);
-        } elseif (isset($params['fen'])) {
-            $paragraph = (new FenParagraph($params['fen']))->getParagraph();
-            return $response->withJson([
-                'paragraph' => implode(' ', $paragraph),
-            ], 200);
+        try {
+            if (isset($params['movetext'])) {
+                $board = (new SanPlay($params['movetext']))->validate()->getBoard();
+                $paragraph = (new FenParagraph($board->toFen()))->getParagraph();
+                return $response->withJson([
+                    'paragraph' => implode(' ', $paragraph),
+                ], 200);
+            } elseif (isset($params['fen'])) {
+                $paragraph = (new FenParagraph($params['fen']))->getParagraph();
+                return $response->withJson([
+                    'paragraph' => implode(' ', $paragraph),
+                ], 200);
+            }
+        } catch (\Exception $e) {
+            return $response->withStatus(500);
         }
     });
 
