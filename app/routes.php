@@ -6,7 +6,7 @@ use Chess\Function\StandardFunction;
 use Chess\Heuristics\SanHeuristics;
 use Chess\Media\BoardToPng;
 use Chess\Play\SanPlay;
-use Chess\Tutor\FenParagraph;
+use Chess\Tutor\FenExplanation;
 use Dotenv\Dotenv;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
@@ -64,7 +64,7 @@ return function (App $app) {
                 $args['name'] = $opening['name'];
                 $args['movetext'] = $opening['movetext'];
                 $board = (new SanPlay($opening['movetext']))->validate()->getBoard();
-                $paragraph = (new FenParagraph($board->toFen()))->getParagraph();
+                $paragraph = (new FenExplanation($board->toFen()))->getParagraph();
                 $args['paragraph'] = implode(' ', $paragraph);
                 if (!file_exists(IMG_FOLDER."$slug.png")) {
                     $args['output'] = (new BoardToPng($board, $flip = false))->output(IMG_FOLDER, $slug);
@@ -138,12 +138,12 @@ return function (App $app) {
         try {
             if (isset($params['movetext'])) {
                 $board = (new SanPlay($params['movetext']))->validate()->getBoard();
-                $paragraph = (new FenParagraph($board->toFen()))->getParagraph();
+                $paragraph = (new FenExplanation($board->toFen()))->getParagraph();
                 return $response->withJson([
                     'paragraph' => implode(' ', $paragraph),
                 ], 200);
             } elseif (isset($params['fen'])) {
-                $paragraph = (new FenParagraph($params['fen']))->getParagraph();
+                $paragraph = (new FenExplanation($params['fen']))->getParagraph();
                 return $response->withJson([
                     'paragraph' => implode(' ', $paragraph),
                 ], 200);
