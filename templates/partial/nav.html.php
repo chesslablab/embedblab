@@ -13,6 +13,9 @@
           <a class="nav-link active" aria-current="page" href="/positions">Positions</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/moves">Moves</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/about">About</a>
         </li>
       </ul>
