@@ -6,8 +6,7 @@ RUN apt-get update && apt-get install -y \
     unzip \
     zip \
     libpng-dev \
-    ffmpeg \
-    stockfish
+    ffmpeg
 
 RUN docker-php-ext-install gd
 
