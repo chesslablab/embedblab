@@ -15,7 +15,7 @@ gameForm.querySelector('button').onclick = (event) => {
 
   document.getElementById('spinner').style.display = 'block';
 
-  const promise1 = fetch(`${scheme}://${host}:${port}/api/tutor`, {
+  const promise1 = fetch(`${scheme}://${host}:${port}/api/tutor/fen`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

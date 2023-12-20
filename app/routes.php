@@ -128,7 +128,7 @@ return function (App $app) {
         return $response->withJson($json, 200);
     });
 
-    $app->post('/api/tutor', function (Request $request, Response $response) {
+    $app->post('/api/tutor/fen', function (Request $request, Response $response) {
         $params = $request->getParsedBody();
 
         if (!isset($params['movetext']) && !isset($params['fen'])) {

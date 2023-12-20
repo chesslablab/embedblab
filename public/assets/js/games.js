@@ -102,7 +102,7 @@ gameForm.querySelector('button').onclick = (event) => {
     });
   });
 
-  const promise2 = fetch(`${scheme}://${host}:${port}/api/tutor`, {
+  const promise2 = fetch(`${scheme}://${host}:${port}/api/tutor/fen`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
