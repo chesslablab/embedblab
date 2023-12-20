@@ -2,11 +2,14 @@
 
 declare(strict_types=1);
 
+use Chess\FenToBoard;
 use Chess\Function\StandardFunction;
 use Chess\Heuristics\SanHeuristics;
 use Chess\Media\BoardToPng;
 use Chess\Play\SanPlay;
 use Chess\Tutor\FenExplanation;
+use Chess\Tutor\PgnExplanation;
+use Chess\UciEngine\Stockfish;
 use Dotenv\Dotenv;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
@@ -145,6 +148,39 @@ return function (App $app) {
             } elseif (isset($params['fen'])) {
                 $paragraph = (new FenExplanation($params['fen']))->getParagraph();
                 return $response->withJson([
+                    'paragraph' => implode(' ', $paragraph),
+                ], 200);
+            }
+        } catch (\Exception $e) {
+            return $response->withStatus(500);
+        }
+    });
+
+    $app->post('/api/tutor/pgn', function (Request $request, Response $response) {
+        $params = $request->getParsedBody();
+
+        if (!isset($params['fen'])) {
+            return $response->withStatus(400);
+        }
+
+        try {
+            if (isset($params['fen'])) {
+                $board = FenToBoard::create($params['fen']);
+                $clone = unserialize(serialize($board));
+                $stockfish = (new Stockfish($board))
+                    ->setOptions([
+                        'Skill Level' => 20
+                    ])
+                    ->setParams([
+                        'depth' => 15
+                    ]);
+                $lan = $stockfish->play($board->toFen());
+                $clone->playLan($board->getTurn(), $lan);
+                $last = array_slice($clone->getHistory(), -1)[0];
+                $paragraph = (new PgnExplanation($last->move->pgn, $board->toFen()))
+                    ->getParagraph();
+                return $response->withJson([
+                    'pgn' => $last->move->pgn,
                     'paragraph' => implode(' ', $paragraph),
                 ], 200);
             }
