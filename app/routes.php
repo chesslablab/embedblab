@@ -87,6 +87,12 @@ return function (App $app) {
         return $renderer->render($response, "positions.html.php", $urlArgs);
     });
 
+    $app->get('/moves', function (Request $request, Response $response) use ($urlArgs) {
+        $renderer = new PhpRenderer('../templates');
+
+        return $renderer->render($response, "moves.html.php", $urlArgs);
+    });
+
     $app->get('/about', function (Request $request, Response $response) {
         $renderer = new PhpRenderer('../templates');
 
