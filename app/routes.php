@@ -207,14 +207,28 @@ return function (App $app) {
             <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
             </urlset>'
         );
+
+        // Add pages
+        $xml->addChild('url')
+            ->addChild('loc', "{$_ENV['SCHEME']}://{$_ENV['HOST']}/openings");
+        $xml->addChild('url')
+            ->addChild('loc', "{$_ENV['SCHEME']}://{$_ENV['HOST']}/positions");
+        $xml->addChild('url')
+            ->addChild('loc', "{$_ENV['SCHEME']}://{$_ENV['HOST']}/moves");
+        $xml->addChild('url')
+            ->addChild('loc', "{$_ENV['SCHEME']}://{$_ENV['HOST']}/about");
+
+        // Add opening URLs
         $contents = file_get_contents(DATA_FOLDER.'/openings.json');
         $json = json_decode($contents, true);
         foreach ($json as $opening) {
             $eco = strtolower($opening['eco']);
             $name = URLify::slug($opening['name']);
-            $url = $xml->addChild('url');
-            $url->addChild('loc', "{$_ENV['SCHEME']}://{$_ENV['HOST']}/opening/{$eco}/$name");
+            $xml->addChild('url')
+                ->addChild('loc', "{$_ENV['SCHEME']}://{$_ENV['HOST']}/opening/{$eco}/$name");
         }
+
+        // Write sitemap
         $body = $response->getBody();
         $body->write($xml->asXML());
 
