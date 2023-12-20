@@ -15,7 +15,7 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
 
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ChessCoach — Chess Positions Explained">
     <meta name="twitter:description" content="ChessCoach describes a chess position both verbally and visually helping you improve your chess thinking process.">
     <meta name="twitter:site" content="@programarivm">

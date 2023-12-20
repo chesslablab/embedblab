@@ -15,7 +15,7 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
 
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ChessCoach — Positions">
     <meta name="twitter:description" content="Explained in terms of chess concepts: Center, space, outpost squares, forks, pins, pressure, connectivity of the pieces, direct opposition, bad bishops, king safety, piece protection, and more!">
     <meta name="twitter:site" content="@programarivm">
