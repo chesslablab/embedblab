@@ -42,7 +42,7 @@
               ChessCoach can explain along with an UCI engine the implications of
               making a particular move. Stockfish is set up with a <code>skill</code>
               level of <code>20</code> and a <code>depth</code> of <code>15</code>
-              to suggest a good move.
+              to suggest a good move. Check it out for yourself right now!
             </p>
             <form id="gameForm">
               <div class="form-group">
