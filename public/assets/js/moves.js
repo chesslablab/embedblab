@@ -58,6 +58,7 @@ gameForm.querySelector('button').onclick = (event) => {
       const urlCreator = window.URL || window.webkitURL;
       const img = document.createElement('img');
       img.src = urlCreator.createObjectURL(blobRes);
+      img.classList.add("img-fluid");
       chessboard.appendChild(img);
     });
   });
