@@ -54,6 +54,7 @@
                 </button>
               </div>
             </form>
+            <div id="chessboard" class="text-center mb-3"></div>
             <div id="tutor" class="alert alert-primary" role="alert"></div>
             <div id="fen" class="input-group mb-3">
               <input type="text" class="form-control" aria-label="FEN" readonly>

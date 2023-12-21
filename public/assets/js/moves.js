@@ -5,6 +5,7 @@ const port = script.getAttribute('data-port');
 
 const gameForm = document.getElementById('gameForm');
 const tutor = document.getElementById('tutor');
+const chessboard = document.getElementById('chessboard');
 const fen = document.getElementById('fen');
 
 gameForm.querySelector('button').onclick = (event) => {
@@ -12,6 +13,9 @@ gameForm.querySelector('button').onclick = (event) => {
 
   while (tutor.firstChild) {
     tutor.removeChild(tutor.firstChild);
+  }
+  while (chessboard.firstChild) {
+    chessboard.removeChild(chessboard.firstChild);
   }
 
   document.getElementById('fen').style.display = 'none';
@@ -40,7 +44,25 @@ gameForm.querySelector('button').onclick = (event) => {
     fen.querySelector('input').value = res.fen;
   });
 
-  Promise.all([promise1])
+  const promise2 = fetch(`${scheme}://${host}:${port}/api/download/image`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      fen: gameForm.querySelector('input').value
+    })
+  })
+  .then(res => {
+    res.blob().then(blobRes => {
+      const urlCreator = window.URL || window.webkitURL;
+      const img = document.createElement('img');
+      img.src = urlCreator.createObjectURL(blobRes);
+      chessboard.appendChild(img);
+    });
+  });
+
+  Promise.all([promise1, promise2])
   .catch(error => {
     alert('Whoops! Something went wrong, please try again.');
   })
