@@ -54,6 +54,7 @@
                 </button>
               </div>
             </form>
+            <div id="chessboard" class="text-center mb-3"></div>
             <div id="tutor" class="alert alert-primary" role="alert">
             </div>
           </article>
