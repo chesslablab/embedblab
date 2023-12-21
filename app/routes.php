@@ -70,6 +70,7 @@ return function (App $app) {
                 $board = (new SanPlay($opening['movetext']))->validate()->getBoard();
                 $paragraph = (new FenExplanation($board->toFen()))->getParagraph();
                 $args['paragraph'] = implode(' ', $paragraph);
+                $args['fen'] = $board->toFen();
                 if (!file_exists(IMG_FOLDER."$slug.png")) {
                     $args['output'] = (new BoardToPng($board, $flip = false))->output(IMG_FOLDER, $slug);
                 } else {
