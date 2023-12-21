@@ -18,6 +18,7 @@ gameForm.querySelector('button').onclick = (event) => {
     charts.removeChild(charts.firstChild);
   }
 
+  document.getElementById('tutor').style.display = 'none';
   document.getElementById('downloadBtn').style.display = 'none';
   document.getElementById('spinner').style.display = 'block';
 
@@ -125,6 +126,7 @@ gameForm.querySelector('button').onclick = (event) => {
   .finally(() => {
     document.getElementById('spinner').style.display = 'none';
     document.getElementById('downloadBtn').style.display = 'block';
+    document.getElementById('tutor').style.display = 'block';
   });
 }
 

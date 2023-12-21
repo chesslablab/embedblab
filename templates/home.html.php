@@ -23,6 +23,7 @@
     <meta name="twitter:creator" content="@programarivm">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="/assets/css/spinner.css">
   </head>
@@ -49,9 +50,11 @@
                  <label for="game" class="form-label"><b>Enter a chess game in SAN format</b>:</label>
                 <textarea id="game" class="form-control" rows="5" placeholder="e.g. 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6" spellcheck="false"></textarea>
               </div>
-              <button id="submitBtn" type="submit" class="btn btn-primary w-100 mt-2">ChessCoach me!</button>
+              <button id="submitBtn" type="submit" class="btn btn-primary w-100 mt-2">
+                <i class="bi bi-chat-square-text"></i> ChessCoach me!
+              </button>
             </form>
-            <div id="tutor" class="container mt-3"></div>
+            <div id="tutor" class="alert alert-primary mt-3" role="alert"></div>
             <div id="charts" class="container mt-2"></div>
             <button id="downloadBtn" class="btn btn-secondary w-100 mt-2">Download</button>
           </article>
