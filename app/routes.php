@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Application\Streams\StreamTmp;
 use Chess\FenToBoard;
 use Chess\Function\StandardFunction;
 use Chess\Heuristics\SanHeuristics;
@@ -191,6 +192,25 @@ return function (App $app) {
                     'fen' => $clone->toFen(),
                 ], 200);
             }
+        } catch (\Exception $e) {
+            return $response->withStatus(500);
+        }
+    });
+
+    $app->get('/api/download/image', function (Request $request, Response $response, $args) {
+        $params = $request->getParsedBody();
+
+        if (!isset($params['fen'])) {
+            return $response->withStatus(400);
+        }
+
+        try {
+            $board = FenToBoard::create($params['fen']);
+            $output = (new BoardToPng($board, $flip = false))->output(IMG_FOLDER);
+            return $response->withBody(new StreamTmp(IMG_FOLDER . "/$output"))
+                ->withHeader('Content-Disposition', 'inline')
+                ->withHeader('Content-Type', mime_content_type(IMG_FOLDER . "/$output"))
+                ->withHeader('Content-Length', filesize(IMG_FOLDER . "/$output"));
         } catch (\Exception $e) {
             return $response->withStatus(500);
         }
