@@ -197,7 +197,7 @@ return function (App $app) {
         }
     });
 
-    $app->get('/api/download/image', function (Request $request, Response $response) {
+    $app->post('/api/download/image', function (Request $request, Response $response) {
         $params = $request->getParsedBody();
 
         if (!isset($params['fen'])) {
