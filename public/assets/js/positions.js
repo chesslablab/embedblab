@@ -13,6 +13,7 @@ gameForm.querySelector('button').onclick = (event) => {
     tutor.removeChild(tutor.firstChild);
   }
 
+  document.getElementById('tutor').style.display = 'none';
   document.getElementById('spinner').style.display = 'block';
 
   const promise1 = fetch(`${scheme}://${host}:${port}/api/tutor/fen`, {
@@ -37,5 +38,6 @@ gameForm.querySelector('button').onclick = (event) => {
   })
   .finally(() => {
     document.getElementById('spinner').style.display = 'none';
+    document.getElementById('tutor').style.display = 'block';
   });
 }
