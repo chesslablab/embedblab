@@ -47,7 +47,7 @@
             </p>
             <form id="gameForm">
               <div class="form-group">
-                 <label for="game" class="form-label"><b>Enter a chess game in SAN format</b>:</label>
+                 <label for="game" class="form-label"><b>Enter a game in SAN format</b>:</label>
                 <textarea id="game" class="form-control" rows="5" placeholder="e.g. 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6" spellcheck="false"></textarea>
               </div>
               <button id="submitBtn" type="submit" class="btn btn-primary w-100 mt-2">
