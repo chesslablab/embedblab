@@ -54,15 +54,12 @@
                 </button>
               </div>
             </form>
-            <div id="tutor" class="alert alert-primary" role="alert">
-            </div>
+            <div id="tutor" class="alert alert-primary" role="alert"></div>
             <div id="fen" class="input-group mb-3">
               <input type="text" class="form-control" aria-label="FEN" readonly>
               <button class="btn btn-primary" type="submit" title="Copy">
                 <i class="bi bi-clipboard"></i>
               </button>
-            </div>
-            <div id="tutor" class="alert alert-primary" role="alert">
             </div>
           </article>
         </div>
