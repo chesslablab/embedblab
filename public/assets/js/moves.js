@@ -5,6 +5,7 @@ const port = script.getAttribute('data-port');
 
 const gameForm = document.getElementById('gameForm');
 const tutor = document.getElementById('tutor');
+const fen = document.getElementById('fen');
 
 gameForm.querySelector('button').onclick = (event) => {
   event.preventDefault();
@@ -13,6 +14,8 @@ gameForm.querySelector('button').onclick = (event) => {
     tutor.removeChild(tutor.firstChild);
   }
 
+  document.getElementById('fen').style.display = 'none';
+  document.getElementById('tutor').style.display = 'none';
   document.getElementById('spinner').style.display = 'block';
 
   const promise1 = fetch(`${scheme}://${host}:${port}/api/tutor/pgn`, {
@@ -26,10 +29,15 @@ gameForm.querySelector('button').onclick = (event) => {
   })
   .then(res => res.json())
   .then(res => {
-    const p = document.createElement('p');
-    const pgn = `${res.pgn} is a good move for these reasons: `;
-    p.appendChild(document.createTextNode(pgn + res.paragraph));
-    tutor.appendChild(p);
+    const paragraph1 = document.createElement('p');
+    const paragraph2 = document.createElement('p');
+    paragraph1.appendChild(document.createTextNode(`${res.pgn} is a good move for these reasons`));
+    paragraph1.classList.add('alert-heading');
+    paragraph1.classList.add('fw-bold');
+    paragraph2.appendChild(document.createTextNode(res.paragraph));
+    tutor.appendChild(paragraph1);
+    tutor.appendChild(paragraph2);
+    fen.querySelector('input').value = res.fen;
   });
 
   Promise.all([promise1])
@@ -38,5 +46,12 @@ gameForm.querySelector('button').onclick = (event) => {
   })
   .finally(() => {
     document.getElementById('spinner').style.display = 'none';
+    document.getElementById('fen').style.display = 'flex';
+    document.getElementById('tutor').style.display = 'block';
   });
+}
+
+fen.querySelector('button').onclick = (event) => {
+  const text = fen.querySelector('input').value;
+  navigator.clipboard.writeText(text);
 }

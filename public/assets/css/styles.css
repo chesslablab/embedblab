@@ -29,6 +29,11 @@ div#charts > div {
   width: 50%;
 }
 
+div#fen,
+div#tutor {
+  display: none;
+}
+
 button#downloadBtn
  {
   display: none;

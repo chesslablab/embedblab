@@ -23,8 +23,9 @@
     <meta name="twitter:creator" content="@programarivm">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/assets/css/spinner.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
   <body>
     <div id="spinner"></div>
@@ -45,13 +46,24 @@
               to suggest a good move. Check it out for yourself right now!
             </p>
             <form id="gameForm">
-              <div class="form-group">
-                <label for="game" class="form-label"><b>Enter a chess position in FEN format</b>:</label>
+              <label for="game" class="form-label"><b>Enter a chess position in FEN format</b>:</label>
+              <div class="input-group mb-3">
                 <input type="text" id="game" class="form-control" placeholder="e.g. 8/5k2/4n3/8/8/1BK5/1B6/8 w - - 0 1" spellcheck="false">
+                <button id="submitBtn" class="btn btn-primary" type="submit" title="ChessCoach me!">
+                  <i class="bi bi-chat-left-text"></i>
+                </button>
               </div>
-              <button id="submitBtn" type="submit" class="btn btn-primary w-100 mt-2">ChessCoach me!</button>
             </form>
-            <div id="tutor" class="container mt-3"></div>
+            <div id="tutor" class="alert alert-primary" role="alert">
+            </div>
+            <div id="fen" class="input-group mb-3">
+              <input type="text" class="form-control" aria-label="FEN" readonly>
+              <button class="btn btn-primary" type="submit" title="Copy">
+                <i class="bi bi-clipboard"></i>
+              </button>
+            </div>
+            <div id="tutor" class="alert alert-primary" role="alert">
+            </div>
           </article>
         </div>
         <div class="col-lg-4 p-5">

@@ -188,6 +188,7 @@ return function (App $app) {
                 return $response->withJson([
                     'pgn' => $last->move->pgn,
                     'paragraph' => implode(' ', $paragraph),
+                    'fen' => $clone->toFen(),
                 ], 200);
             }
         } catch (\Exception $e) {
