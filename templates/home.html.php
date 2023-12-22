@@ -40,10 +40,10 @@
               Explains a chess position verbally and visually
             </p>
             <p>
-              Beginners often approach chess by trying to deliver checkmate quickly.
-              However, there are so many different things to look at in order to
-              understand a chess position. ChessCoach helps you improve your chess
-              thinking process. Check it out for yourself right now!
+              Beginners often think they can checkmate the opponent's king quickly.
+              However, there are so many things to look at in order to understand
+              a position. ChessCoach helps you improve your chess thinking process.
+              Check it out for yourself right now!
             </p>
             <form id="gameForm">
               <div class="form-group">
