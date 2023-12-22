@@ -35,9 +35,9 @@
       <div class="row p-3">
         <div class="col-lg-8 px-0">
           <article>
-            <h1>ChessCoach</h1>
+            <h1>Chess Coach</h1>
             <p class="fs-5 fw-bold">
-              ChessCoach explains a chess position both verbally and visually
+              Explains a chess position verbally and visually
             </p>
             <p>
               Beginners often approach chess by trying to deliver checkmate quickly.
