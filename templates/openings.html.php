@@ -39,6 +39,22 @@
             <table class="table table-hover mt-2">
               <tbody></tbody>
             </table>
+            <p>
+              Also, here is a list with common chess openings just in case you are not
+              too sure about which one to select.
+            </p>
+            <div class="list-group">
+              <a href="/opening/a10/english-opening" class="list-group-item list-group-item-action">A10 — English Opening</a>
+              <a href="/opening/b10/caro-kann-defense" class="list-group-item list-group-item-action">B10 — Caro-Kann Defense</a>
+              <a href="/opening/b20/sicilian-defense" class="list-group-item list-group-item-action">B20 — Sicilian Defense</a>
+              <a href="/opening/c00/french-defense" class="list-group-item list-group-item-action">C00 — French Defense</a>
+              <a href="/opening/c50/italian-game" class="list-group-item list-group-item-action">C50 — Italian Game</a>
+              <a href="/opening/c60/ruy-lopez" class="list-group-item list-group-item-action">C60 — Ruy Lopez</a>
+              <a href="/opening/d02/queens-pawn-game-london-system" class="list-group-item list-group-item-action">D02 — Queen's Pawn Game: London System</a>
+              <a href="/opening/d06/queens-gambit" class="list-group-item list-group-item-action">D06 — Queen's Gambit</a>
+              <a href="/opening/e12/queens-indian-defense" class="list-group-item list-group-item-action">E12 — Queen's Indian Defense</a>
+              <a href="/opening/e61/kings-indian-defense" class="list-group-item list-group-item-action">E61 — King's Indian Defense</a>
+            </div>
           </article>
         </div>
         <div class="col-lg-4 p-5">
