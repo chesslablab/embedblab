@@ -6,11 +6,13 @@ use App\Application\Streams\StreamTmp;
 use Chess\FenToBoard;
 use Chess\Function\StandardFunction;
 use Chess\Heuristics\SanHeuristics;
+use Chess\Media\BoardToMp4;
 use Chess\Media\BoardToPng;
 use Chess\Play\SanPlay;
 use Chess\Tutor\FenExplanation;
 use Chess\Tutor\PgnExplanation;
 use Chess\UciEngine\Stockfish;
+use Chess\Variant\Classical\Board;
 use Dotenv\Dotenv;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
@@ -18,6 +20,7 @@ use Slim\Http\Response as Response;
 use Slim\Views\PhpRenderer;
 
 const IMG_FOLDER = __DIR__.'/../public/assets/img';
+const VIDEO_FOLDER = __DIR__.'/../public/assets/video';
 const DATA_FOLDER = __DIR__.'/../resources/data';
 
 $dotenv = Dotenv::createImmutable(__DIR__.'/../');
@@ -72,9 +75,18 @@ return function (App $app) {
                 $args['paragraph'] = implode(' ', $paragraph);
                 $args['fen'] = $board->toFen();
                 if (!file_exists(IMG_FOLDER."$slug.png")) {
-                    $args['output'] = (new BoardToPng($board, $flip = false))->output(IMG_FOLDER, $slug);
+                    $args['img'] = (new BoardToPng($board, $flip = false))->output(IMG_FOLDER, $slug);
                 } else {
-                    $args['output'] = "$slug.png";
+                    $args['img'] = "$slug.png";
+                }
+                if (!file_exists(VIDEO_FOLDER."$slug.mp4")) {
+                    $args['video'] = (new BoardToMp4(
+                        $opening['movetext'],
+                        new Board(),
+                        $flip = false
+                    ))->output(VIDEO_FOLDER, $slug);
+                } else {
+                    $args['video'] = "$slug.mp4";
                 }
             }
         }

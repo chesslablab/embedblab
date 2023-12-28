@@ -10,7 +10,7 @@
     <meta property="og:title" content="<?php echo strtoupper($eco); ?> — <?php echo $name; ?>">
     <meta property="og:description" content="<?php echo $movetext; ?>">
     <meta property="og:url" content="<?php echo $scheme; ?>://<?php echo $host; ?>:<?php echo $port; ?>/opening/<?php echo $eco; ?>/<?php echo $slug; ?>">
-    <meta property="og:image" content="<?php echo $scheme; ?>://<?php echo $host; ?>:<?php echo $port; ?>/assets/img/<?php echo $output; ?>">
+    <meta property="og:image" content="<?php echo $scheme; ?>://<?php echo $host; ?>:<?php echo $port; ?>/assets/img/<?php echo $img; ?>">
     <meta property="og:site_name" content="ChessCoach">
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
@@ -19,7 +19,7 @@
     <meta name="twitter:title" content="<?php echo strtoupper($eco); ?> — <?php echo $name; ?>">
     <meta name="twitter:description" content="<?php echo $movetext; ?>">
     <meta name="twitter:site" content="@programarivm">
-    <meta name="twitter:image" content="<?php echo $scheme; ?>://<?php echo $host; ?>:<?php echo $port; ?>/assets/img/<?php echo $output; ?>">
+    <meta name="twitter:image" content="<?php echo $scheme; ?>://<?php echo $host; ?>:<?php echo $port; ?>/assets/img/<?php echo $img; ?>">
     <meta name="twitter:creator" content="@programarivm">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -45,15 +45,25 @@
             <p>
               <?php echo $paragraph; ?>
             </p>
-            <img src="/assets/img/<?php echo $output; ?>" class="img-fluid mx-auto d-block mt-4" alt="<?php echo $name; ?>">
-            <div id="fen" class="input-group mt-3">
+            <div class="embed-responsive embed-responsive-1by1">
+              <video class="embed-responsive-item mx-auto d-block mt-4" controls>
+                <source src="/assets/video/<?php echo $video; ?>" type="video/mp4">
+                Download the <a href="/assets/video/<?php echo $video; ?>">MP4</a>
+              </video>
+            </div>
+            <div id="fen" class="input-group mt-2">
               <input type="text" class="form-control" aria-label="FEN" value="<?php echo $fen; ?>" readonly>
               <button class="btn btn-primary" type="submit" title="Copy">
-                <i class="bi bi-clipboard"></i>
+                <i class="bi bi-clipboard"></i> Copy FEN
               </button>
             </div>
+            <a href="/assets/img/<?php echo $img; ?>" class="btn btn-primary w-100 mt-2" role="button" aria-pressed="true" target="_blank">
+              <i class="bi bi-image"></i> View Image
+            </a>
+            <button id="downloadBtn" class="btn btn-primary w-100 mt-2">
+              <i class="bi bi-download"></i> Download Charts
+            </button>
             <div id="charts" class="container mt-3"></div>
-            <button id="downloadBtn" class="btn btn-secondary w-100 mt-2">Download</button>
           </article>
         </div>
         <div class="col-lg-4 p-5">

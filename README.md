@@ -32,10 +32,11 @@ docker compose -f docker-compose.prod.yml up -d
 
 ### File Permissions
 
-Make sure that nginx has write permissions to the `public/assets/img` folder.
+Make sure that nginx has write permissions to the `public/assets/img` as well as to the `public/assets/video` folder.
 
 ```
 sudo chown $USER:www-data public/assets/img
+sudo chown $USER:www-data public/assets/video
 ```
 
 ### Contributions

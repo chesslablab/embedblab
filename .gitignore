@@ -9,6 +9,7 @@
 /composer.lock
 
 /public/assets/img/*
+/public/assets/video/*
 
 .env
 
