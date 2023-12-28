@@ -66,6 +66,7 @@ div#social {
 }
 
 @media (max-width: 992px) {
+  video,
   div#charts > div {
     width: 100%;
   }
