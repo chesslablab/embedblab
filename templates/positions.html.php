@@ -49,8 +49,8 @@
               <label for="game" class="form-label"><b>Enter a position in FEN format</b>:</label>
               <div class="input-group mb-3">
                 <input type="text" id="game" class="form-control" placeholder="e.g. 8/5k2/4n3/8/8/1BK5/1B6/8 w - - 0 1" spellcheck="false">
-                <button id="submitBtn" class="btn btn-primary" type="submit" title="ChessCoach me!">
-                  <i class="bi bi-chat-square-text"></i>
+                <button id="submitBtn" class="btn btn-primary" type="submit">
+                  <i class="bi bi-chat-square-text"></i> Explain
                 </button>
               </div>
             </form>

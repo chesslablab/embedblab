@@ -53,7 +53,7 @@
             </div>
             <div id="fen" class="input-group mt-2">
               <input type="text" class="form-control" aria-label="FEN" value="<?php echo $fen; ?>" readonly>
-              <button class="btn btn-primary" type="submit" title="Copy">
+              <button class="btn btn-primary" type="submit">
                 <i class="bi bi-clipboard"></i> Copy FEN
               </button>
             </div>

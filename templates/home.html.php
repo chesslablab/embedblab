@@ -47,16 +47,18 @@
             </p>
             <form id="gameForm">
               <div class="form-group">
-                 <label for="game" class="form-label"><b>Enter a game in SAN format</b>:</label>
+                <label for="game" class="form-label"><b>Enter a game in SAN format</b>:</label>
                 <textarea id="game" class="form-control" rows="5" placeholder="e.g. 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6" spellcheck="false"></textarea>
               </div>
               <button id="submitBtn" type="submit" class="btn btn-primary w-100 mt-2">
-                <i class="bi bi-chat-square-text"></i> ChessCoach me!
+                <i class="bi bi-chat-square-text"></i> Explain
               </button>
             </form>
             <div id="tutor" class="alert alert-primary mt-3" role="alert"></div>
             <div id="charts" class="container mt-2"></div>
-            <button id="downloadBtn" class="btn btn-secondary w-100 mt-2">Download</button>
+            <button id="downloadBtn" class="btn btn-primary w-100 mt-2">
+              <i class="bi bi-download"></i> Download Charts
+            </button>
           </article>
         </div>
         <div class="col-lg-4 p-5">
