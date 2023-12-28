@@ -60,10 +60,10 @@
             <a href="/assets/img/<?php echo $img; ?>" class="btn btn-primary w-100 mt-2" role="button" aria-pressed="true" target="_blank">
               <i class="bi bi-image"></i> View Image
             </a>
+            <div id="charts" class="container mt-3"></div>
             <button id="downloadBtn" class="btn btn-primary w-100 mt-2">
               <i class="bi bi-download"></i> Download Charts
             </button>
-            <div id="charts" class="container mt-3"></div>
           </article>
         </div>
         <div class="col-lg-4 p-5">
