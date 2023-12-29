@@ -197,12 +197,14 @@ return function (App $app) {
                 $lan = $stockfish->play($board->toFen());
                 $clone->playLan($board->getTurn(), $lan);
                 $last = array_slice($clone->getHistory(), -1)[0];
-                $paragraph = (new PgnExplanation($last->move->pgn, $board->toFen()))
+                $fenExplanation = (new FenExplanation($params['fen']))->getParagraph();
+                $pgnExplanation = (new PgnExplanation($last->move->pgn, $board->toFen()))
                     ->getParagraph();
                 return $response->withJson([
-                    'pgn' => $last->move->pgn,
-                    'paragraph' => implode(' ', $paragraph),
+                    'fenExplanation' => implode(' ', $fenExplanation),
+                    'pgnExplanation' => implode(' ', $pgnExplanation),
                     'fen' => $clone->toFen(),
+                    'pgn' => $last->move->pgn,
                 ], 200);
             }
         } catch (\Exception $e) {

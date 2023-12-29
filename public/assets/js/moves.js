@@ -35,10 +35,8 @@ gameForm.querySelector('button').onclick = (event) => {
   .then(res => {
     const paragraph1 = document.createElement('p');
     const paragraph2 = document.createElement('p');
-    paragraph1.appendChild(document.createTextNode(`${res.pgn} is a good move for these reasons`));
-    paragraph1.classList.add('alert-heading');
-    paragraph1.classList.add('fw-bold');
-    paragraph2.appendChild(document.createTextNode(res.paragraph));
+    paragraph1.appendChild(document.createTextNode(`Here is a description of this position. ${res.fenExplanation}`));
+    paragraph2.appendChild(document.createTextNode(`${res.pgn} is a good move for these reasons. ${res.pgnExplanation}`));
     tutor.appendChild(paragraph1);
     tutor.appendChild(paragraph2);
     fen.querySelector('input').value = res.fen;
