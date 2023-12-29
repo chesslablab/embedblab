@@ -32,7 +32,7 @@ gameForm.querySelector('button').onclick = (event) => {
   .then(res => res.json())
   .then(res => {
     const p = document.createElement('p');
-    p.appendChild(document.createTextNode(`✨ Here is a description of this position. ${res.paragraph}`));
+    p.appendChild(document.createTextNode(`Here is a description of this position. ${res.paragraph}`));
     tutor.appendChild(p);
   });
 
