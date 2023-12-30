@@ -56,7 +56,7 @@
                 <i class="bi bi-chat-square-text"></i> Explain
               </button>
             </form>
-            <div class="d-flex justify-content-center mt-4">
+            <div class="d-flex justify-content-center mt-4 mb-4">
               <div id="board"></div>
             </div>
             <div id="tutor"></div>
