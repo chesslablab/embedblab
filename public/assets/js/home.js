@@ -114,8 +114,13 @@ gameForm.querySelector('button').onclick = (event) => {
   })
   .then(res => res.json())
   .then(res => {
+    PGNV.pgnView('board', {
+      pgn: res.movetext,
+      locale: 'en',
+      pieceStyle: 'wikipedia'
+    });
     const p = document.createElement('p');
-    p.appendChild(document.createTextNode(res.paragraph));
+    p.appendChild(document.createTextNode(`Here is a description of this position. ${res.paragraph}`));
     tutor.appendChild(p);
   });
 

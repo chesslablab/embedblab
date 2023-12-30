@@ -163,6 +163,7 @@ return function (App $app) {
                 $board = (new SanPlay($params['movetext']))->validate()->getBoard();
                 $paragraph = (new FenExplanation($board->toFen()))->getParagraph();
                 return $response->withJson([
+                    'movetext' => $params['movetext'],
                     'paragraph' => implode(' ', $paragraph),
                 ], 200);
             } elseif (isset($params['fen'])) {
