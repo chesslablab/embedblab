@@ -1,4 +1,4 @@
-body:after{
+body:after {
   content: "beta";
   position: fixed;
   width: 80px;
@@ -66,7 +66,6 @@ div#social {
 }
 
 @media (max-width: 992px) {
-  video,
   div#charts > div {
     width: 100%;
   }

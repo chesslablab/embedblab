@@ -22,6 +22,8 @@
     <meta name="twitter:image" content="<?php echo $scheme; ?>://<?php echo $host; ?>:<?php echo $port; ?>/assets/img/<?php echo $img; ?>">
     <meta name="twitter:creator" content="@programarivm">
 
+    <script src="https://cdn.jsdelivr.net/npm/@mliebelt/pgn-viewer@1.6.6/lib/dist.min.js"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/assets/css/styles.min.css">
@@ -45,13 +47,17 @@
             <p>
               <?php echo $paragraph; ?>
             </p>
-            <div class="embed-responsive embed-responsive-1by1">
-              <video class="embed-responsive-item mx-auto d-block mt-4" controls>
-                <source src="/assets/video/<?php echo $video; ?>" type="video/mp4">
-                Download the <a href="/assets/video/<?php echo $video; ?>">MP4</a>
-              </video>
+            <div class="d-flex justify-content-center mt-4">
+              <div id="board"></div>
             </div>
-            <div id="fen" class="input-group mt-2">
+            <script>
+              PGNV.pgnView('board', {
+                pgn: '<?php echo $movetext; ?>',
+                locale: 'en',
+                pieceStyle: 'wikipedia'
+              });
+            </script>
+            <div id="fen" class="input-group">
               <input type="text" class="form-control" aria-label="FEN" value="<?php echo $fen; ?>" readonly>
               <button class="btn btn-primary" type="submit">
                 <i class="bi bi-clipboard"></i> Copy FEN
@@ -59,6 +65,9 @@
             </div>
             <a href="/assets/img/<?php echo $img; ?>" class="btn btn-primary w-100 mt-2" role="button" aria-pressed="true" target="_blank">
               <i class="bi bi-image"></i> View Image
+            </a>
+            <a href="/assets/video/<?php echo $video; ?>" class="btn btn-primary w-100 mt-2" role="button" aria-pressed="true" target="_blank">
+              <i class="bi bi-camera-reels"></i> Watch Video
             </a>
             <div id="charts" class="container mt-3"></div>
             <button id="downloadBtn" class="btn btn-primary w-100 mt-2">
