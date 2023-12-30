@@ -36,7 +36,7 @@ gameForm.querySelector('button').onclick = (event) => {
     const paragraph1 = document.createElement('p');
     const paragraph2 = document.createElement('p');
     paragraph1.appendChild(document.createTextNode(`Here is a description of this position. ${res.fenExplanation}`));
-    paragraph2.appendChild(document.createTextNode(`${res.pgn} is a good move for the following reasons. ${res.pgnExplanation}`));
+    paragraph2.appendChild(document.createTextNode(`${res.pgn} is a good move! It changes the position as described next. ${res.pgnExplanation}`));
     tutor.appendChild(paragraph1);
     tutor.appendChild(paragraph2);
     fen.querySelector('input').value = res.fen;
