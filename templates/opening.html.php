@@ -51,11 +51,13 @@
               <div id="board"></div>
             </div>
             <script>
+              const pgn = '<?php echo $movetext; ?>';
               PGNV.pgnView('board', {
-                pgn: '<?php echo $movetext; ?>',
+                pgn: pgn,
                 locale: 'en',
                 pieceStyle: 'wikipedia',
-                resizable: false
+                resizable: false,
+                startPlay: pgn.split(' ').length
               });
             </script>
             <div id="fen" class="input-group">

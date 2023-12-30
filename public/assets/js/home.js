@@ -118,7 +118,8 @@ gameForm.querySelector('button').onclick = (event) => {
       pgn: res.movetext,
       locale: 'en',
       pieceStyle: 'wikipedia',
-      resizable: false
+      resizable: false,
+      startPlay: res.movetext.split(' ').length
     });
     const p = document.createElement('p');
     p.appendChild(document.createTextNode(`Here is a description of this position. ${res.paragraph}`));
