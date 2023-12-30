@@ -54,7 +54,8 @@
               PGNV.pgnView('board', {
                 pgn: '<?php echo $movetext; ?>',
                 locale: 'en',
-                pieceStyle: 'wikipedia'
+                pieceStyle: 'wikipedia',
+                resizable: false
               });
             </script>
             <div id="fen" class="input-group">

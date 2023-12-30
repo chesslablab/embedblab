@@ -117,7 +117,8 @@ gameForm.querySelector('button').onclick = (event) => {
     PGNV.pgnView('board', {
       pgn: res.movetext,
       locale: 'en',
-      pieceStyle: 'wikipedia'
+      pieceStyle: 'wikipedia',
+      resizable: false
     });
     const p = document.createElement('p');
     p.appendChild(document.createTextNode(`Here is a description of this position. ${res.paragraph}`));
