@@ -5,14 +5,17 @@ declare(strict_types=1);
 use App\Application\Streams\StreamTmp;
 use Chess\FenToBoard;
 use Chess\Function\StandardFunction;
+use Chess\Heuristics\FenHeuristics;
 use Chess\Heuristics\SanHeuristics;
 use Chess\Media\BoardToMp4;
 use Chess\Media\BoardToPng;
+use Chess\ML\Supervised\Classification\CountLabeller;
 use Chess\Play\SanPlay;
 use Chess\Tutor\FenExplanation;
 use Chess\Tutor\PgnExplanation;
 use Chess\UciEngine\Stockfish;
 use Chess\Variant\Classical\Board;
+use Chess\Variant\Classical\PGN\AN\Color;
 use Dotenv\Dotenv;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
@@ -74,6 +77,19 @@ return function (App $app) {
                 $paragraph = (new FenExplanation($board->toFen()))->getParagraph();
                 $args['paragraph'] = implode(' ', $paragraph);
                 $args['fen'] = $board->toFen();
+                $balance = (new FenHeuristics($args['fen']))->getBalance();
+                $label = (new CountLabeller())->label($balance);
+                $diff = $label[Color::W] - $label[Color::B];
+                if ($diff > 0) {
+                    $res = 'White is probably better in this position';
+                } elseif ($diff < 0) {
+                    $res = 'Black is probably better in this position';
+                } else {
+                    $res = 'both players are equal';
+                }
+                $args['paragraph'] .= " Overall, {$label[Color::W]} heuristic
+                    evaluation features are favoring White while {$label[Color::B]}
+                    are favoring Black, which suggests that $res.";
                 if (!file_exists(IMG_FOLDER."$slug.png")) {
                     $args['img'] = (new BoardToPng($board, $flip = false))->output(IMG_FOLDER, $slug);
                 } else {
