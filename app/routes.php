@@ -183,9 +183,23 @@ return function (App $app) {
                     'paragraph' => implode(' ', $paragraph),
                 ], 200);
             } elseif (isset($params['fen'])) {
+                $balance = (new FenHeuristics($params['fen']))->getBalance();
+                $label = (new CountLabeller())->label($balance);
+                $diff = $label[Color::W] - $label[Color::B];
+                if ($diff > 0) {
+                    $res = 'White is probably better in this position';
+                } elseif ($diff < 0) {
+                    $res = 'Black is probably better in this position';
+                } else {
+                    $res = 'both players are equal';
+                }
                 $paragraph = (new FenExplanation($params['fen']))->getParagraph();
+                $paragraph = implode(' ', $paragraph);
+                $paragraph .= " Overall, {$label[Color::W]} heuristic
+                    evaluation features are favoring White while {$label[Color::B]}
+                    are favoring Black, which suggests that $res.";
                 return $response->withJson([
-                    'paragraph' => implode(' ', $paragraph),
+                    'paragraph' => $paragraph,
                 ], 200);
             }
         } catch (\Exception $e) {
