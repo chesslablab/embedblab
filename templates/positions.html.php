@@ -60,7 +60,7 @@
             <div id="chessboard" class="text-center mb-3"></div>
             <div id="tutor"></div>
             <p>
-              Also, here is a list of chess positions just in case you are not too sure about which FEN to enter.
+              Also, here is a list of chess positions for further study.
             </p>
             <div class="list-group">
               <a data-fen="6k1/5p2/3p4/1p1P3p/1PpQ2p1/1q1b2P1/4KP1P/2B5 w - - 14 42" href="#" class="list-group-item list-group-item-action">WCC 1972 — Game 3: Spassky–Fischer, 0–1 (Modern Benoni)</a>
