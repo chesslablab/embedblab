@@ -262,6 +262,8 @@ return function (App $app) {
         $xml->addChild('url')
             ->addChild('loc', "{$_ENV['SCHEME']}://{$_ENV['HOST']}/moves");
         $xml->addChild('url')
+            ->addChild('loc', "{$_ENV['SCHEME']}://{$_ENV['HOST']}/heuristics");
+        $xml->addChild('url')
             ->addChild('loc', "{$_ENV['SCHEME']}://{$_ENV['HOST']}/about");
 
         // Add opening URLs
