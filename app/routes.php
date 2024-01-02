@@ -199,8 +199,8 @@ return function (App $app) {
                 $lan = $stockfish->play($board->toFen());
                 $clone->playLan($board->getTurn(), $lan);
                 $last = array_slice($clone->getHistory(), -1)[0];
-                $fenExplanation = (new FenExplanation($params['fen']))->getParagraph();
-                $pgnExplanation = (new PgnExplanation($last->move->pgn, $board->toFen()))
+                $fenExplanation = (new FenExplanation($params['fen'], true))->getParagraph();
+                $pgnExplanation = (new PgnExplanation($last->move->pgn, $board->toFen(), true))
                     ->getParagraph();
                 return $response->withJson([
                     'fenExplanation' => implode(' ', $fenExplanation),
