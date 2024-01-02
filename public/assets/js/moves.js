@@ -18,8 +18,10 @@ gameForm.querySelector('button').onclick = (event) => {
     chessboard.removeChild(chessboard.firstChild);
   }
 
-  document.getElementById('fen').style.display = 'none';
+  document.getElementById('validation').style.display = 'none';
+  document.getElementById('chessboard').style.display = 'none';
   document.getElementById('tutor').style.display = 'none';
+  document.getElementById('fen').style.display = 'none';
   document.getElementById('spinner').style.display = 'block';
 
   const promise1 = fetch(`${scheme}://${host}:${port}/api/tutor/pgn`, {
@@ -63,11 +65,12 @@ gameForm.querySelector('button').onclick = (event) => {
 
   Promise.all([promise1, promise2])
   .then(() => {
-    document.getElementById('fen').style.display = 'flex';
+    document.getElementById('chessboard').style.display = 'block';
     document.getElementById('tutor').style.display = 'block';
+    document.getElementById('fen').style.display = 'flex';
   })
   .catch(error => {
-    alert('Whoops! Something went wrong, please try again.');
+    document.getElementById('validation').style.display = 'block';
   })
   .finally(() => {
     document.getElementById('spinner').style.display = 'none';
