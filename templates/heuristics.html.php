@@ -50,7 +50,7 @@
               The pawn structure could determine the endgame.
             </p>
             <div class="alert alert-primary" role="alert">
-              <p class="alert-heading fw-bold">The list of reasons goes on</p>
+              <p class="alert-heading fw-bold">The list of reasons to make a move goes on</p>
               <a href="https://php-chess.readthedocs.io/en/latest/heuristics/">Learn more</a>
               about ChesslaBlab's open source heuristic evaluation which has been
               implemented with the PHP language.
