@@ -108,6 +108,12 @@ return function (App $app) {
         return $renderer->render($response, "moves.html.php", $urlArgs);
     });
 
+    $app->get('/heuristics', function (Request $request, Response $response) {
+        $renderer = new PhpRenderer('../templates');
+
+        return $renderer->render($response, "heuristics.html.php");
+    });
+
     $app->get('/about', function (Request $request, Response $response) {
         $renderer = new PhpRenderer('../templates');
 

@@ -42,10 +42,10 @@
               Explains a chess position verbally and visually
             </p>
             <p>
-              Chess beginners often think they can checkmate the opponent's king
+              Chess beginners believe they can checkmate the opponent's king
               quickly. However, there are so many different things to consider in
-              order to understand a position. ChessCoach helps you improve your
-              chess thinking process. Check it out for yourself right now!
+              order to understand a position. ChessCoach helps you improve your skills using your <a href="/heuristics">heuristic thinking</a>.
+              Check it out for yourself right now!
             </p>
             <form id="gameForm">
               <div class="form-group">
