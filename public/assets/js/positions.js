@@ -18,6 +18,7 @@ gameForm.querySelector('button').onclick = (event) => {
   }
 
   document.getElementById('validation').style.display = 'none';
+  document.getElementById('chessboard').style.display = 'none';
   document.getElementById('tutor').style.display = 'none';
   document.getElementById('spinner').style.display = 'block';
 
