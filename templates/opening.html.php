@@ -57,16 +57,11 @@
                 locale: 'en',
                 pieceStyle: 'wikipedia',
                 resizable: false,
-                startPlay: pgn.split(' ').length
+                startPlay: pgn.split(' ').length,
+                showFen: true
               });
             </script>
-            <div id="fen" class="input-group">
-              <input type="text" class="form-control" aria-label="FEN" value="<?php echo $fen; ?>" readonly>
-              <button class="btn btn-primary" type="submit">
-                <i class="bi bi-clipboard"></i> Copy FEN
-              </button>
-            </div>
-            <a href="/assets/img/<?php echo $img; ?>" class="btn btn-primary w-100 mt-2" role="button" aria-pressed="true" target="_blank">
+            <a href="/assets/img/<?php echo $img; ?>" class="btn btn-primary w-100" role="button" aria-pressed="true" target="_blank">
               <i class="bi bi-image"></i> View Image
             </a>
             <a href="/assets/video/<?php echo $video; ?>" class="btn btn-primary w-100 mt-2" role="button" aria-pressed="true" target="_blank">

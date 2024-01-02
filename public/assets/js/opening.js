@@ -4,7 +4,6 @@ const host = script.getAttribute('data-host');
 const port = script.getAttribute('data-port');
 
 const movetext = document.getElementById('movetext');
-const fen = document.getElementById('fen');
 const charts = document.getElementById('charts');
 const allEqual = arr => arr.every(val => val === arr[0]);
 
@@ -97,13 +96,7 @@ fetch(`${scheme}://${host}:${port}/api/heuristics`, {
 .finally(() => {
   document.getElementById('spinner').style.display = 'none';
   document.getElementById('downloadBtn').style.display = 'block';
-  document.getElementById('fen').style.display = 'flex';
 });
-
-fen.querySelector('button').onclick = (event) => {
-  const text = fen.querySelector('input').value;
-  navigator.clipboard.writeText(text);
-}
 
 document.getElementById('downloadBtn').onclick = (event) => {
   event.preventDefault();
