@@ -30,15 +30,15 @@
               which makes it a perfect topic for learning full-stack web development
               as well as for playing around with machine learning libraries.
             </p>
+            <div class="alert alert-primary" role="alert">
+              <p class="alert-heading fw-bold">Did we miss something?</p>
+              Please let us know by either opening <a href="https://github.com/chesslablab/coach/issues" target="_blank" rel="noreferrer">an issue</a>
+              or <a href="https://github.com/orgs/chesslablab/discussions" target="_blank" rel="noreferrer">a discussion</a>.
+              Your feedback is very much appreciated.
+            </div>
             <p>
               Happy coding and learning!
             </p>
-            <div class="alert alert-primary" role="alert">
-              <p class="alert-heading fw-bold">Did we miss something?</p>
-              Please let us know by either <a href="https://github.com/chesslablab/coach/issues" target="_blank" rel="noreferrer">raising an issue</a>
-              or by <a href="https://github.com/orgs/chesslablab/discussions" target="_blank" rel="noreferrer">opening a discussion</a>.
-              Your feedback is very much appreciated. Thank you.
-            </div>
           </article>
         </div>
         <div class="col-lg-4 p-5">

@@ -42,7 +42,7 @@
             <p>
               Center, space, outpost squares, forks, pins, pressure, connectivity
               of the pieces, direct opposition, bad bishops, king safety, piece
-              protection, and more! ChessCoach can spot weaknesses in the pawn
+              protection, and more! ChessCoach can also spot weaknesses in the pawn
               structure like isolated pawns, backward pawns and doubled pawns.
             </p>
             <form id="gameForm">

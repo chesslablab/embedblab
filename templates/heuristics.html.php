@@ -49,9 +49,12 @@
               simplified when you have an advantage, then so much the better.
               The pawn structure could determine the endgame.
             </p>
-            <p>
-              The list of reasons goes on and on.
-            </p>
+            <div class="alert alert-primary" role="alert">
+              <p class="alert-heading fw-bold">The list of reasons goes on</p>
+              <a href="https://php-chess.readthedocs.io/en/latest/heuristics/">Learn more</a>
+              about ChesslaBlab's open source heuristic evaluation which has been
+              implemented with the PHP language.
+            </div>
             <p>
               A heuristic evaluation is a quick numerical estimate of a chess position
               that suggests the chances of winning without considering checkmate.
