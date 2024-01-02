@@ -139,17 +139,19 @@ return function (App $app) {
     $app->post('/api/heuristics', function (Request $request, Response $response) {
         $params = $request->getParsedBody();
 
-        // TODO: Parameter validation
+        if (empty($params['movetext'])) {
+            return $response->withStatus(500);
+        }
 
-        $function = new StandardFunction();
-        $heuristics = new SanHeuristics($params['movetext']);
-
-        $json = [
-            'evalNames' => $function->names(),
-            'balance' => $heuristics->getBalance(),
-        ];
-
-        return $response->withJson($json, 200);
+        try {
+            $json = [
+                'evalNames' => (new StandardFunction())->names(),
+                'balance' => (new SanHeuristics($params['movetext']))->getBalance(),
+            ];
+            return $response->withJson($json, 200);
+        } catch (\Exception $e) {
+            return $response->withStatus(500);
+        }
     });
 
     $app->post('/api/tutor/fen', function (Request $request, Response $response) {

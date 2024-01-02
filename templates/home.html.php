@@ -55,6 +55,9 @@
               <button id="submitBtn" type="submit" class="btn btn-primary w-100 mt-2">
                 <i class="bi bi-chat-square-text"></i> Explain
               </button>
+              <div id="validation" class="alert alert-warning mt-2" role="alert">
+                <i class="bi bi-exclamation-triangle-fill"></i> Whoops! Please try again with a different game.
+              </div>
             </form>
             <div class="d-flex justify-content-center mt-4 mb-4">
               <div id="board"></div>

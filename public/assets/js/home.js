@@ -18,6 +18,8 @@ gameForm.querySelector('button').onclick = (event) => {
     charts.removeChild(charts.firstChild);
   }
 
+  document.getElementById('validation').style.display = 'none';
+  document.getElementById('board').style.display = 'none';
   document.getElementById('tutor').style.display = 'none';
   document.getElementById('downloadBtn').style.display = 'none';
   document.getElementById('spinner').style.display = 'block';
@@ -114,25 +116,28 @@ gameForm.querySelector('button').onclick = (event) => {
   })
   .then(res => res.json())
   .then(res => {
-    PGNV.pgnView('board', {
-      pgn: res.movetext,
-      locale: 'en',
-      pieceStyle: 'wikipedia',
-      resizable: false,
-      startPlay: res.movetext.split(' ').length
-    });
-    const p = document.createElement('p');
-    p.appendChild(document.createTextNode(`Here is a description of this position. ${res.paragraph}`));
-    tutor.appendChild(p);
+    if (res.movetext) {
+      PGNV.pgnView('board', {
+        pgn: res.movetext,
+        locale: 'en',
+        pieceStyle: 'wikipedia',
+        resizable: false,
+        startPlay: res.movetext.split(' ').length
+      });
+      const p = document.createElement('p');
+      p.appendChild(document.createTextNode(`Here is a description of this position. ${res.paragraph}`));
+      tutor.appendChild(p);
+    }
   });
 
   Promise.all([promise1, promise2])
   .then(() => {
-    document.getElementById('downloadBtn').style.display = 'block';
+    document.getElementById('board').style.display = 'block';
     document.getElementById('tutor').style.display = 'block';
+    document.getElementById('downloadBtn').style.display = 'block';
   })
   .catch(error => {
-    alert('Whoops! Something went wrong, please try again.');
+    document.getElementById('validation').style.display = 'block';
   })
   .finally(() => {
     document.getElementById('spinner').style.display = 'none';
