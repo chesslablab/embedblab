@@ -39,6 +39,7 @@ div#charts > div {
 }
 
 div#fen,
+div#validation,
 div#chessboard,
 div#tutor {
   display: none;

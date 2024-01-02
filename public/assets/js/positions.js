@@ -17,6 +17,7 @@ gameForm.querySelector('button').onclick = (event) => {
     chessboard.removeChild(chessboard.firstChild);
   }
 
+  document.getElementById('validation').style.display = 'none';
   document.getElementById('tutor').style.display = 'none';
   document.getElementById('spinner').style.display = 'block';
 
@@ -61,7 +62,7 @@ gameForm.querySelector('button').onclick = (event) => {
     document.getElementById('tutor').style.display = 'block';
   })
   .catch(error => {
-    alert('Whoops! Something went wrong, please try again.');
+    document.getElementById('validation').style.display = 'block';
   })
   .finally(() => {
     document.getElementById('spinner').style.display = 'none';

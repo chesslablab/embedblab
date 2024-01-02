@@ -53,6 +53,9 @@
                   <i class="bi bi-chat-square-text"></i> Explain
                 </button>
               </div>
+              <div id="validation" class="alert alert-warning" role="alert">
+                <i class="bi bi-exclamation-triangle-fill"></i> Whoops! Please try again with a different FEN.
+              </div>
             </form>
             <div id="chessboard" class="text-center mb-3"></div>
             <div id="tutor"></div>
