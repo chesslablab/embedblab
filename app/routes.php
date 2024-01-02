@@ -5,11 +5,9 @@ declare(strict_types=1);
 use App\Application\Streams\StreamTmp;
 use Chess\FenToBoard;
 use Chess\Function\StandardFunction;
-use Chess\Heuristics\FenHeuristics;
 use Chess\Heuristics\SanHeuristics;
 use Chess\Media\BoardToMp4;
 use Chess\Media\BoardToPng;
-use Chess\ML\Supervised\Classification\CountLabeller;
 use Chess\Play\SanPlay;
 use Chess\Tutor\FenExplanation;
 use Chess\Tutor\PgnExplanation;
@@ -70,26 +68,13 @@ return function (App $app) {
         foreach ($json as $opening) {
             $slug = URLify::slug($opening['name']);
             if ($slug === $args['name']) {
+                $board = (new SanPlay($opening['movetext']))->validate()->getBoard();
+                $paragraph = (new FenExplanation($board->toFen(), true))->getParagraph();
                 $args['slug'] = $args['name'];
                 $args['name'] = $opening['name'];
                 $args['movetext'] = $opening['movetext'];
-                $board = (new SanPlay($opening['movetext']))->validate()->getBoard();
-                $paragraph = (new FenExplanation($board->toFen()))->getParagraph();
                 $args['paragraph'] = implode(' ', $paragraph);
                 $args['fen'] = $board->toFen();
-                $balance = (new FenHeuristics($args['fen']))->getBalance();
-                $label = (new CountLabeller())->label($balance);
-                $diff = $label[Color::W] - $label[Color::B];
-                if ($diff > 0) {
-                    $res = 'White is probably better in this position';
-                } elseif ($diff < 0) {
-                    $res = 'Black is probably better in this position';
-                } else {
-                    $res = 'both players are equal';
-                }
-                $args['paragraph'] .= " Overall, {$label[Color::W]} heuristic
-                    evaluation features are favoring White while {$label[Color::B]}
-                    are favoring Black, which suggests that $res.";
                 if (!file_exists(IMG_FOLDER."$slug.png")) {
                     $args['img'] = (new BoardToPng($board, $flip = false))->output(IMG_FOLDER, $slug);
                 } else {
@@ -177,43 +162,15 @@ return function (App $app) {
         try {
             if (isset($params['movetext'])) {
                 $board = (new SanPlay($params['movetext']))->validate()->getBoard();
-                $balance = (new FenHeuristics($board->toFen()))->getBalance();
-                $label = (new CountLabeller())->label($balance);
-                $diff = $label[Color::W] - $label[Color::B];
-                if ($diff > 0) {
-                    $res = 'White is probably better in this position';
-                } elseif ($diff < 0) {
-                    $res = 'Black is probably better in this position';
-                } else {
-                    $res = 'both players are equal';
-                }
-                $paragraph = (new FenExplanation($board->toFen()))->getParagraph();
-                $paragraph = implode(' ', $paragraph);
-                $paragraph .= " Overall, {$label[Color::W]} heuristic
-                    evaluation features are favoring White while {$label[Color::B]}
-                    are favoring Black, which suggests that $res.";
+                $paragraph = (new FenExplanation($board->toFen(), true))->getParagraph();
                 return $response->withJson([
                     'movetext' => $board->getMovetext(),
-                    'paragraph' => $paragraph,
+                    'paragraph' => implode(' ', $paragraph),
                 ], 200);
             } elseif (isset($params['fen'])) {
-                $balance = (new FenHeuristics($params['fen']))->getBalance();
-                $label = (new CountLabeller())->label($balance);
-                $diff = $label[Color::W] - $label[Color::B];
-                if ($diff > 0) {
-                    $res = 'White is probably better in this position';
-                } elseif ($diff < 0) {
-                    $res = 'Black is probably better in this position';
-                } else {
-                    $res = 'both players are equal';
-                }
-                $paragraph = (new FenExplanation($params['fen']))->getParagraph();
-                $paragraph = implode(' ', $paragraph);
-                $paragraph .= " Overall, {$label[Color::W]} heuristic
-                    evaluation features are favoring White while {$label[Color::B]}
-                    are favoring Black, which suggests that $res.";
+                $paragraph = (new FenExplanation($params['fen'], true))->getParagraph();
                 return $response->withJson([
-                    'paragraph' => $paragraph,
+                    'paragraph' => implode(' ', $paragraph),
                 ], 200);
             }
         } catch (\Exception $e) {
