@@ -63,6 +63,9 @@
               they are based on probabilities and opportunities more than anything else.
             </p>
             <p>
+              This is a form of abductive reasoning.
+            </p>
+            <p>
               Happy learning!
             </p>
           </article>
