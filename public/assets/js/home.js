@@ -127,13 +127,15 @@ gameForm.querySelector('button').onclick = (event) => {
   });
 
   Promise.all([promise1, promise2])
+  .then(() => {
+    document.getElementById('downloadBtn').style.display = 'block';
+    document.getElementById('tutor').style.display = 'block';
+  })
   .catch(error => {
     alert('Whoops! Something went wrong, please try again.');
   })
   .finally(() => {
     document.getElementById('spinner').style.display = 'none';
-    document.getElementById('downloadBtn').style.display = 'block';
-    document.getElementById('tutor').style.display = 'block';
   });
 }
 
