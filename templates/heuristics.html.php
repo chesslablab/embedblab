@@ -5,6 +5,23 @@
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ChessCoach — Heuristic Thinking</title>
+    <meta name="description" content="A heuristic evaluation is a quick numerical estimate of a chess position that suggests the chances of winning without considering checkmate.">
+
+    <meta property="og:title" content="ChessCoach — Heuristic Thinking">
+    <meta property="og:description" content="A heuristic evaluation is a quick numerical estimate of a chess position that suggests the chances of winning without considering checkmate.">
+    <meta property="og:url" content="<?php echo $scheme; ?>://<?php echo $host; ?>:<?php echo $port; ?>">
+    <meta property="og:image" content="<?php echo $scheme; ?>://<?php echo $host; ?>:<?php echo $port; ?>/cover.jpg">
+    <meta property="og:site_name" content="ChessCoach">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ChessCoach — Heuristic Thinking">
+    <meta name="twitter:description" content="A heuristic evaluation is a quick numerical estimate of a chess position that suggests the chances of winning without considering checkmate.">
+    <meta name="twitter:site" content="@programarivm">
+    <meta name="twitter:image" content="<?php echo $scheme; ?>://<?php echo $host; ?>:<?php echo $port; ?>/cover.jpg">
+    <meta name="twitter:creator" content="@programarivm">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/styles.min.css">
   </head>
@@ -18,6 +35,22 @@
             <h1>Heuristics</h1>
             <p class="fs-5 fw-bold">
               Unleash the power of your heuristic thinking!
+            </p>
+            <p>
+              If you ask a chess pro why a chess move is good, they'll probably
+              give you a bunch of reasons, many of them intuitive, about why they
+              made that decision.
+            </p>
+            <p>
+              It is important to develop your pieces in the opening while trying
+              to control the center of the board at the same time. Castling is an
+              excellent move as long as the king gets safe. Then, in the middlegame
+              space becomes an advantage. And if a complex position can be
+              simplified when you have an advantage, then so much the better.
+              The pawn structure could determine the endgame.
+            </p>
+            <p>
+              The list of reasons goes on and on.
             </p>
             <p>
               A heuristic evaluation is a quick numerical estimate of a chess position

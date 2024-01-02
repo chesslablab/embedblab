@@ -44,7 +44,8 @@
             <p>
               Chess beginners believe they can checkmate the opponent's king
               quickly. However, there are so many different things to consider in
-              order to understand a position. ChessCoach helps you improve your skills using your <a href="/heuristics">heuristic thinking</a>.
+              order to understand a position. ChessCoach helps you improve your
+              chess skills by using your <a href="/heuristics">heuristic thinking</a>.
               Check it out for yourself right now!
             </p>
             <form id="gameForm">
