@@ -7,9 +7,7 @@ const gameForm = document.getElementById('gameForm');
 const tutor = document.getElementById('tutor');
 const chessboard = document.getElementById('chessboard');
 
-gameForm.querySelector('button').onclick = (event) => {
-  event.preventDefault();
-
+const reset = () => {
   while (tutor.firstChild) {
     tutor.removeChild(tutor.firstChild);
   }
@@ -21,14 +19,16 @@ gameForm.querySelector('button').onclick = (event) => {
   document.getElementById('chessboard').style.display = 'none';
   document.getElementById('tutor').style.display = 'none';
   document.getElementById('spinner').style.display = 'block';
+}
 
+const promise = (value) => {
   const promise1 = fetch(`${scheme}://${host}:${port}/api/tutor/fen`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      fen: gameForm.querySelector('input').value
+      fen: value
     })
   })
   .then(res => res.json())
@@ -44,7 +44,7 @@ gameForm.querySelector('button').onclick = (event) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      fen: gameForm.querySelector('input').value
+      fen: value
     })
   })
   .then(res => {
@@ -69,3 +69,18 @@ gameForm.querySelector('button').onclick = (event) => {
     document.getElementById('spinner').style.display = 'none';
   });
 }
+
+gameForm.querySelector('button').onclick = (event) => {
+  event.preventDefault();
+  reset();
+  promise(gameForm.querySelector('input').value);
+
+}
+
+document.querySelectorAll('.list-group-item').forEach(item => {
+  item.addEventListener( 'click', (event) => {
+    event.preventDefault();
+    reset();
+    promise(event.target.getAttribute('data-fen'));
+  });
+});
