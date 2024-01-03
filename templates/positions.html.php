@@ -64,6 +64,9 @@
             </p>
             <select class="form-select" aria-label="Default select example">
               <option selected>Select a chess position</option>
+              <option value="6k1/8/1r5P/7K/6P1/8/R7/8 b - - 4 55">WCC 2018 — Game 13: Carlsen–Caruana, 1–0</option>
+              <option value="r1r5/5ppk/3p4/3Nnq1p/p1Q1p2P/4B1P1/PP3P2/2R1K2R w K - 3 29">WCC 2018 — Game 14: Caruana–Carlsen, 0–1</option>
+              <option value="8/6pk/p6p/2Q5/PP1n1pQ1/4q2P/6BK/8 b - - 1 51">WCC 2018 — Game 15: Carlsen–Caruana, 1–0</option>
               <option value="8/1p6/1P1K4/pk6/8/8/5B2/8 b - - 3 56">WCC 1972 — Game 1: Spassky–Fischer, 1–0 (Nimzo-Indian Main)</option>
               <option value="6k1/5p2/3p4/1p1P3p/1PpQ2p1/1q1b2P1/4KP1P/2B5 w - - 14 42">WCC 1972 — Game 3: Spassky–Fischer, 0–1 (Modern Benoni)</option>
               <option value="5k2/6p1/1p4qp/p1pPp1p1/b1P1Pn2/2P5/2Q3PP/3BB1K1 w - - 0 28">WCC 1972 — Game 5: Spassky–Fischer, 0–1 (Nimzo-Indian Hübner)</option>
