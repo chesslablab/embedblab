@@ -57,10 +57,10 @@
             </div>
             <p>
               A heuristic evaluation is a quick numerical estimate of a chess position
-              that suggests the chances of winning without considering checkmate.
+              that suggests who is probably better without considering checkmate.
               Heuristic thinking is not the same thing as chess calculations.
-              Heuristic evaluations are often correct but they may also fail because
-              they are based on probabilities and opportunities more than anything else.
+              Heuristic evaluations are often correct but may fail as long as they
+              are based on probabilities and opportunities more than anything else.
             </p>
             <p>
               This is a form of abductive reasoning.
