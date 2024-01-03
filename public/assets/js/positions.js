@@ -77,10 +77,8 @@ gameForm.querySelector('button').onclick = (event) => {
 
 }
 
-document.querySelectorAll('.list-group-item').forEach(item => {
-  item.addEventListener( 'click', (event) => {
-    event.preventDefault();
-    reset();
-    promise(event.target.getAttribute('data-fen'));
-  });
-});
+document.querySelector('select').onchange = async (event) => {
+  event.preventDefault();
+  reset();
+  promise(event.target.value);
+}

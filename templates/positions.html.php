@@ -62,14 +62,16 @@
             <p>
               Also, here is a list of chess positions for further study.
             </p>
-            <div class="list-group">
-              <a data-fen="6k1/5p2/3p4/1p1P3p/1PpQ2p1/1q1b2P1/4KP1P/2B5 w - - 14 42" href="#" class="list-group-item list-group-item-action">WCC 1972 — Game 3: Spassky–Fischer, 0–1 (Modern Benoni)</a>
-              <a data-fen="5k2/6p1/1p4qp/p1pPp1p1/b1P1Pn2/2P5/2Q3PP/3BB1K1 w - - 0 28" href="#" class="list-group-item list-group-item-action">WCC 1972 — Game 5: Spassky–Fischer, 0–1 (Nimzo-Indian Hübner)</a>
-              <a data-fen="4q2k/2r1r3/4PR1p/p1p5/P1Bp1Q1P/1P6/6P1/6K1 b - - 4 41" href="#" class="list-group-item list-group-item-action">WCC 1972 — Game 6: Fischer–Spassky, 1–0 (QGD Tartakower)</a>
-              <a data-fen="8/4k3/2R2p2/p1n4p/8/b5P1/P2RB1KP/1r6 b - - 2 37" href="#" class="list-group-item list-group-item-action">WCC 1972 — Game 8: Fischer–Spassky, 1–0 (English Symmetrical)</a>
-              <a data-fen="8/3r4/5P2/2p1b1R1/3k2P1/5K2/8/1R6 b - - 2 56" href="#" class="list-group-item list-group-item-action">WCC 1972 — Game 10: Fischer–Spassky, 1–0 (Ruy Lopez Breyer)</a>
-              <a data-fen="r1b1k3/1p2b3/p1P1RQ2/1P3n2/5Pp1/1N5r/3N2KP/R7 b q - 0 31" href="#" class="list-group-item list-group-item-action">WCC 1972 — Game 11: Spassky–Fischer, 1–0 (Sicilian Najdorf)</a>
-            </div>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Select a chess position</option>
+              <option value="8/1p6/1P1K4/pk6/8/8/5B2/8 b - - 3 56">WCC 1972 — Game 1: Spassky–Fischer, 1–0 (Nimzo-Indian Main)</option>
+              <option value="6k1/5p2/3p4/1p1P3p/1PpQ2p1/1q1b2P1/4KP1P/2B5 w - - 14 42">WCC 1972 — Game 3: Spassky–Fischer, 0–1 (Modern Benoni)</option>
+              <option value="5k2/6p1/1p4qp/p1pPp1p1/b1P1Pn2/2P5/2Q3PP/3BB1K1 w - - 0 28">WCC 1972 — Game 5: Spassky–Fischer, 0–1 (Nimzo-Indian Hübner)</option>
+              <option value="4q2k/2r1r3/4PR1p/p1p5/P1Bp1Q1P/1P6/6P1/6K1 b - - 4 41">WCC 1972 — Game 6: Fischer–Spassky, 1–0 (QGD Tartakower)</option>
+              <option value="8/4k3/2R2p2/p1n4p/8/b5P1/P2RB1KP/1r6 b - - 2 37">WCC 1972 — Game 8: Fischer–Spassky, 1–0 (English Symmetrical)</option>
+              <option value="8/3r4/5P2/2p1b1R1/3k2P1/5K2/8/1R6 b - - 2 56">WCC 1972 — Game 10: Fischer–Spassky, 1–0 (Ruy Lopez Breyer)</option>
+              <option value="r1b1k3/1p2b3/p1P1RQ2/1P3n2/5Pp1/1N5r/3N2KP/R7 b q - 0 31">WCC 1972 — Game 11: Spassky–Fischer, 1–0 (Sicilian Najdorf)</option>
+            </select>
           </article>
         </div>
         <div class="col-lg-4 p-5">
