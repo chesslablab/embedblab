@@ -71,6 +71,8 @@
               <option value="8/4k3/2R2p2/p1n4p/8/b5P1/P2RB1KP/1r6 b - - 2 37">WCC 1972 — Game 8: Fischer–Spassky, 1–0 (English Symmetrical)</option>
               <option value="8/3r4/5P2/2p1b1R1/3k2P1/5K2/8/1R6 b - - 2 56">WCC 1972 — Game 10: Fischer–Spassky, 1–0 (Ruy Lopez Breyer)</option>
               <option value="r1b1k3/1p2b3/p1P1RQ2/1P3n2/5Pp1/1N5r/3N2KP/R7 b q - 0 31">WCC 1972 — Game 11: Spassky–Fischer, 1–0 (Sicilian Najdorf)</option>
+              <option value="8/3r4/8/8/3BR3/1p6/pK3p2/5k2 w - - 0 75">WCC 1972 — Game 13: Spassky–Fischer, 0–1 (Alekhine's Defense Modern)</option>
+              <option value="8/3B4/5p2/5P1p/P4k2/1P6/r4PK1/8 b - - 1 41">WCC 1972 — Game 21: Spassky–Fischer, 0–1 (Sicilian Taimanov)</option>
             </select>
           </article>
         </div>
