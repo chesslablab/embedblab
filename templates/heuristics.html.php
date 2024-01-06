@@ -35,7 +35,7 @@
           <article>
             <h1>Heuristics</h1>
             <p class="fs-5 fw-bold">
-              Unleash the power of your heuristic thinking!
+              Unleash your heuristic thinking!
             </p>
             <p>
               If you ask a chess pro why a chess move is good, they'll probably
