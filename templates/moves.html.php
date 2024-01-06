@@ -18,7 +18,6 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="ChessCoach — Moves">
     <meta name="twitter:description" content="ChessCoach can explain along with an UCI engine why a move is good. Stockfish is set up with a skill level of 20 and a depth of 15 to calculate a move.">
-    <meta name="twitter:site" content="@programarivm">
     <meta name="twitter:image" content="<?php echo $scheme; ?>://<?php echo $host; ?>:<?php echo $port; ?>/cover.jpg">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">

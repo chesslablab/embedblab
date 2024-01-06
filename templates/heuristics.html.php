@@ -18,7 +18,6 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="ChessCoach — Heuristic Thinking">
     <meta name="twitter:description" content="A heuristic evaluation is a quick numerical estimate of a chess position that suggests the chances of winning without considering checkmate.">
-    <meta name="twitter:site" content="@programarivm">
     <meta name="twitter:image" content="<?php echo $scheme; ?>://<?php echo $host; ?>:<?php echo $port; ?>/cover.jpg">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
