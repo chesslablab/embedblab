@@ -18,9 +18,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="<?php echo strtoupper($eco); ?> — <?php echo $name; ?>">
     <meta name="twitter:description" content="<?php echo $movetext; ?>">
-    <meta name="twitter:site" content="@programarivm">
     <meta name="twitter:image" content="<?php echo $scheme; ?>://<?php echo $host; ?>:<?php echo $port; ?>/assets/img/<?php echo $img; ?>">
-    <meta name="twitter:creator" content="@programarivm">
 
     <script src="https://cdn.jsdelivr.net/npm/@mliebelt/pgn-viewer@1.6.6/lib/dist.min.js"></script>
 

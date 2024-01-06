@@ -18,18 +18,20 @@
           <article>
             <h1>About</h1>
             <p class="fs-5 fw-bold">
-              ChesslaBlab is a GitHub organization for open-source chess projects
+              ChesslaBlab is an organization creating open-source chess software
             </p>
             <p>
-              A bunch of public repos ranging from React and JavaScript to PHP are
-              available on it. ChesslaBlab stands for chess laboratory, so the
-              repositories can be used and extended by developers to create amazing
-              chess web apps.
+              Chess is a perfect topic for learning full-stack web development as
+              well as for playing around with machine learning libraries. A bunch
+              of public repos ranging from React and JavaScript to PHP are
+              available on ChesslaBlab.
             </p>
             <p>
-              Chess involves quite a few different aspects of software development,
-              which makes it a perfect topic for learning full-stack web development
-              as well as for playing around with machine learning libraries.
+              ChesslaBlab stands for chess laboratory, so the repositories can be
+              used and extended by developers to create amazing chess web apps.
+            </p>
+            <p>
+              Happy coding!
             </p>
             <div class="alert alert-primary" role="alert">
               <p class="alert-heading fw-bold">Did we miss something?</p>
@@ -37,9 +39,6 @@
               or <a href="https://github.com/orgs/chesslablab/discussions" target="_blank" rel="noreferrer">a discussion</a>.
               Your feedback is very much appreciated.
             </div>
-            <p>
-              Happy coding and learning!
-            </p>
           </article>
         </div>
         <div class="col-lg-4 p-5">

@@ -18,9 +18,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="ChessCoach — Chess Positions Explained">
     <meta name="twitter:description" content="ChessCoach describes a chess position both verbally and visually helping you improve your chess thinking process.">
-    <meta name="twitter:site" content="@programarivm">
     <meta name="twitter:image" content="<?php echo $scheme; ?>://<?php echo $host; ?>:<?php echo $port; ?>/cover.jpg">
-    <meta name="twitter:creator" content="@programarivm">
 
     <script src="https://cdn.jsdelivr.net/npm/@mliebelt/pgn-viewer@1.6.6/lib/dist.min.js"></script>
 
