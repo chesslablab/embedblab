@@ -1,15 +1,10 @@
 <div id="social">
   <p>
-    👋 Hello! I'm Jordi, software developer. Founder of ChesslaBlab. You may want to follow me on GitHub or X.
+    👋 Hello! ChesslaBlab is an organization creating open-source chess software. You may want to follow it on GitHub.
   </p>
   <div class="mt-2">
-    <a href="https://github.com/programarivm" target="_blank" class="mt-2">
-      <img src="https://img.shields.io/badge/Follow%20@programarivm-ebf0f4?logo=GitHub&logoColor=black" alt="Follow me on GitHub" height="24">
-    </a>
-  </div>
-  <div class="mt-2">
-    <a href="https://x.com/programarivm" target="_blank">
-      <img src="https://img.shields.io/badge/Follow%20@programarivm-000000?logo=X&logoColor=white" alt="Follow me on X" height="24">
+    <a href="https://github.com/chesslablab" target="_blank" class="mt-2">
+      <img src="https://img.shields.io/badge/Follow%20@chesslablab-ebf0f4?logo=GitHub&logoColor=black" alt="Follow ChesslaBlab on GitHub" height="24">
     </a>
   </div>
 </div>
