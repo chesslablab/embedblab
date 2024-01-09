@@ -1,5 +1,6 @@
 body {
   font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 body:after {

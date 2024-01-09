@@ -18,7 +18,9 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="ChessCoach — Chess Positions Explained">
     <meta name="twitter:description" content="ChessCoach describes a chess position both verbally and visually helping you improve your chess thinking process.">
+    <meta name="twitter:site" content="@programarivm">
     <meta name="twitter:image" content="<?php echo $scheme; ?>://<?php echo $host; ?>:<?php echo $port; ?>/cover.jpg">
+    <meta name="twitter:creator" content="@programarivm">
 
     <script src="https://cdn.jsdelivr.net/npm/@mliebelt/pgn-viewer@1.6.6/lib/dist.min.js"></script>
 
@@ -32,7 +34,48 @@
     <div id="spinner"></div>
     <?php require __DIR__ . '/partial/nav.html.php'; ?>
 
-    <iframe src="https://reactchess.net" title="React Chess" style="display:block; width:100vw; height:100vh; overflow-y: hidden;" scrolling="no"></iframe>
+    <div class="container my-4">
+      <div class="row p-3">
+        <div class="col-lg-8 px-0">
+          <article>
+            <h1>Games</h1>
+            <p class="fs-5 fw-bold">
+              Explained verbally and visually
+            </p>
+            <p>
+              Chess beginners believe they can checkmate the opponent's king
+              quickly. However, there are so many different things to consider in
+              order to understand a position. ChessCoach helps you improve your
+              chess skills by using your <a href="/heuristics">heuristic thinking</a>.
+              Check it out for yourself right now!
+            </p>
+            <form id="gameForm">
+              <div class="form-group">
+                <label for="game" class="form-label"><b>Enter a game in SAN format</b>:</label>
+                <textarea id="game" class="form-control" rows="5" placeholder="e.g. 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6" spellcheck="false"></textarea>
+              </div>
+              <button id="submitBtn" type="submit" class="btn btn-primary w-100 mt-2">
+                <i class="bi bi-chat-square-text"></i> Explain
+              </button>
+              <div id="validation" class="alert alert-warning mt-2" role="alert">
+                <i class="bi bi-exclamation-triangle-fill"></i> Whoops! Please try again with a different game.
+              </div>
+            </form>
+            <div class="d-flex justify-content-center mt-4 mb-4">
+              <div id="board"></div>
+            </div>
+            <div id="tutor"></div>
+            <div id="charts" class="container mt-2"></div>
+            <button id="downloadBtn" class="btn btn-primary w-100 mt-2">
+              <i class="bi bi-download"></i> Download Charts
+            </button>
+          </article>
+        </div>
+        <div class="col-lg-4 p-5">
+          <?php require __DIR__ . '/partial/social.html.php'; ?>
+        </div>
+      </div>
+    </div>
 
     <div class="container">
       <?php require __DIR__ . '/partial/footer.html.php'; ?>
@@ -41,6 +84,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script id="theScript" src="assets/js/home.min.js" data-scheme="<?php echo $scheme; ?>" data-host="<?php echo $host; ?>" data-port="<?php echo $port; ?>"></script>
+    <script id="theScript" src="assets/js/games.min.js" data-scheme="<?php echo $scheme; ?>" data-host="<?php echo $host; ?>" data-port="<?php echo $port; ?>"></script>
   </body>
 </html>
