@@ -66,6 +66,10 @@ div#social {
   font-size: 0.9rem;
 }
 
+nav {
+  background-color: #1565c0;
+}
+
 .navbar {
   padding: 0;
   font-size: 0.875rem;
