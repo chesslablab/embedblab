@@ -16,7 +16,7 @@
       <div class="row p-3">
         <div class="col-lg-8 px-0">
           <article>
-            <h1>About</h1>
+            <h1>About Us</h1>
             <p class="fs-5 fw-bold">
               ChesslaBlab is an organization creating open-source chess software
             </p>

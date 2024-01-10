@@ -9,6 +9,9 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/chat" target="_blank">Chat</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/about">About Us</a>
+        </li>
       </ul>
     </div>
   </div>
