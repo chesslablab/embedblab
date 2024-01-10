@@ -66,6 +66,15 @@ div#social {
   font-size: 0.9rem;
 }
 
+.navbar {
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+.navbar-toggler {
+  border: 0;
+}
+
 @media (max-width: 1200px) {
   div#charts > div {
     width: 50%;
