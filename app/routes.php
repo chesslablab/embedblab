@@ -126,12 +126,6 @@ return function (App $app) {
         return $renderer->render($response, "about.html.php");
     });
 
-    $app->get('/chat', function (Request $request, Response $response) {
-        $renderer = new PhpRenderer('../templates');
-
-        return $renderer->render($response, "chat.html.php");
-    });
-
     /*
     |---------------------------------------------------------------------------
     | API endpoints.
