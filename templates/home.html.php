@@ -32,7 +32,7 @@
     <div id="spinner"></div>
     <?php require __DIR__ . '/partial/nav.html.php'; ?>
 
-    <iframe src="https://reactchess.net" title="React Chess" style="display:block; width:100vw; height:125vh; overflow-y: hidden;" scrolling="no"></iframe>
+    <iframe src="https://reactchess.net" title="React Chess" scrolling="no"></iframe>
 
     <div class="container">
       <?php require __DIR__ . '/partial/footer.html.php'; ?>

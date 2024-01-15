@@ -21,6 +21,13 @@ body:after {
   transform:rotate(-45deg);
 }
 
+iframe {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 canvas {
   margin: 0 auto;
 }
@@ -88,5 +95,9 @@ nav {
 @media (max-width: 992px) {
   div#charts > div {
     width: 100%;
+  }
+
+  iframe {
+    height: 175vh;
   }
 }
