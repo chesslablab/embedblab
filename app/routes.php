@@ -215,7 +215,7 @@ return function (App $app) {
                 $clone->playLan($board->getTurn(), $lan);
                 $last = array_slice($clone->getHistory(), -1)[0];
                 $fenExplanation = (new FenExplanation($board, true))->getParagraph();
-                $pgnExplanation = (new PgnExplanation($last->move->pgn, $board->toFen(), true))
+                $pgnExplanation = (new PgnExplanation($last->move->pgn, $board, true))
                     ->getParagraph();
                 return $response->withJson([
                     'fenExplanation' => implode(' ', $fenExplanation),
