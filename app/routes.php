@@ -75,7 +75,7 @@ return function (App $app) {
             $slug = URLify::slug($opening['name']);
             if ($slug === $args['name']) {
                 $board = (new SanPlay($opening['movetext']))->validate()->getBoard();
-                $paragraph = (new FenExplanation($board->toFen(), true))->getParagraph();
+                $paragraph = (new FenExplanation($board, true))->getParagraph();
                 $args['slug'] = $args['name'];
                 $args['name'] = $opening['name'];
                 $args['movetext'] = $opening['movetext'];
@@ -176,13 +176,14 @@ return function (App $app) {
         try {
             if (isset($params['movetext'])) {
                 $board = (new SanPlay($params['movetext']))->validate()->getBoard();
-                $paragraph = (new FenExplanation($board->toFen(), true))->getParagraph();
+                $paragraph = (new FenExplanation($board, true))->getParagraph();
                 return $response->withJson([
                     'movetext' => $board->getMovetext(),
                     'paragraph' => implode(' ', $paragraph),
                 ], 200);
             } elseif (isset($params['fen'])) {
-                $paragraph = (new FenExplanation($params['fen'], true))->getParagraph();
+                $board = FenToBoard::create($params['fen']);
+                $paragraph = (new FenExplanation($board, true))->getParagraph();
                 return $response->withJson([
                     'paragraph' => implode(' ', $paragraph),
                 ], 200);
@@ -213,7 +214,7 @@ return function (App $app) {
                 $lan = $stockfish->play($board->toFen());
                 $clone->playLan($board->getTurn(), $lan);
                 $last = array_slice($clone->getHistory(), -1)[0];
-                $fenExplanation = (new FenExplanation($params['fen'], true))->getParagraph();
+                $fenExplanation = (new FenExplanation($board, true))->getParagraph();
                 $pgnExplanation = (new PgnExplanation($last->move->pgn, $board->toFen(), true))
                     ->getParagraph();
                 return $response->withJson([
