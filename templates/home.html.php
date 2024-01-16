@@ -32,7 +32,7 @@
     <div id="spinner"></div>
     <?php require __DIR__ . '/partial/nav.html.php'; ?>
 
-    <iframe src="https://reactchess.net" title="React Chess" scrolling="no"></iframe>
+    <iframe src="https://reactchess.net" title="React Chess"></iframe>
 
     <div class="container">
       <?php require __DIR__ . '/partial/footer.html.php'; ?>
@@ -41,6 +41,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script id="theScript" src="assets/js/home.min.js" data-scheme="<?php echo $scheme; ?>" data-host="<?php echo $host; ?>" data-port="<?php echo $port; ?>"></script>
   </body>
 </html>

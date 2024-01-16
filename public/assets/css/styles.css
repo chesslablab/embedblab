@@ -96,8 +96,4 @@ nav {
   div#charts > div {
     width: 100%;
   }
-
-  iframe {
-    height: 175vh;
-  }
 }
