@@ -32,7 +32,7 @@
     <div id="spinner"></div>
     <?php require __DIR__ . '/partial/nav.html.php'; ?>
 
-    <iframe src="https://ui.chesslablab.net" title="React Chess"></iframe>
+    <iframe src="https://ui.chesslablab.org" title="React Chess"></iframe>
 
     <div class="container">
       <?php require __DIR__ . '/partial/footer.html.php'; ?>
