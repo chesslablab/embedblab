@@ -50,7 +50,7 @@
             </p>
             <div class="alert alert-primary" role="alert">
               <p class="alert-heading fw-bold">The list of reasons to make a move goes on</p>
-              <a href="https://php-chess.chesslablab.org/heuristics/">Learn more</a>
+              <a href="https://php-chess.docs.chesslablab.org/heuristics/">Learn more</a>
               about ChesslaBlab's open-source heuristic evaluation which has been
               implemented with the PHP language.
             </div>
