@@ -1,6 +1,6 @@
-## Visualization
+## EmbedBlab
 
-Data analysis tool and tutor to learn chess.
+A multi-page app (MPA) using server-side rendering (SSR) to learn and play chess online. A single-page app (SPA) is embedded as an iframe.
 
 ### Install and Setup
 
